@@ -4,7 +4,7 @@ This repository is setup to receive your code and schemas for the 4 days trainin
 
 ## Tools you need
 
- - an UML tool: PlantUML, Modelio, VisualParadigm...
+ - an UML tool: PlantUML, Modelio, VisualParadigm (community edition)...
  - your favorite IDE and programming language
  - some brain cells
 
