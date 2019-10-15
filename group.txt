@@ -4,3 +4,9 @@ Quentin BREGEON
 Marin BROCHOIRE
 Matthieu FELIX
 
+Le projet consiste à faire pour une agence de location de chameau et dromadaire
+Structure =
+- Use cases
+- Diagrama d'activité / classe
+- UML
+- 
