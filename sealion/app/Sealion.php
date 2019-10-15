@@ -8,8 +8,8 @@ class Sealion extends Model
 {
     public $timestamps = false;
 
-    public function option()
+    public function rent()
     {
-        return $this->hasOne(Option::class);
+        return $this->belongsTo(Rent::class);
     }
 }

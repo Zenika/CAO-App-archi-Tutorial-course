@@ -8,8 +8,8 @@ class Rent extends Model
 {
     public $timestamps = false;
 
-    public function sealion()
+    public function user()
     {
-        return $this->hasOne(Sealion::class);
+        return $this->belongsTo(User::class);
     }
 }

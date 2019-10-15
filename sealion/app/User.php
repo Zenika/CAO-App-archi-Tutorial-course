@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    public $timestamps = false;
     use Notifiable;
 
     /**
@@ -27,9 +28,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
-
-    public function rent()
-    {
-        return $this->hasOne(Rent::class);
-    }
 }
