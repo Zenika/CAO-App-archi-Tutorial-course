@@ -4,9 +4,8 @@ Quentin BREGEON
 Marin BROCHOIRE
 Matthieu FELIX
 
-Le projet consiste à faire pour une agence de location de chameau et dromadaire
+Le projet consiste à faire pour une agence de trebuchet
 Structure =
-- Use cases
+- Use cases (de l'application par le gérant)
 - Diagrama d'activité / classe
 - UML
-- 
