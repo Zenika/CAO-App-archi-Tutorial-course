@@ -4,7 +4,10 @@ Quentin BREGEON
 Marin BROCHOIRE
 Matthieu FELIX
 
-Le projet consiste à faire pour une agence de trebuchet
+Lien du repo github du projet de groupe =
+https://github.com/Kentin-dev/trebushop
+
+Le projet consiste à faire un logiciel pour une agence de location trebuchet
 Structure =
 - Use cases (de l'application par le gérant)
 - Diagrama d'activité / classe
