@@ -12,10 +12,9 @@
 </header>
 @yield('content')
 
-
-
-
-
+<main>
+    Hello World
+</main>
 
 <footer>
     <!-- INCLUDE HEADER-->
