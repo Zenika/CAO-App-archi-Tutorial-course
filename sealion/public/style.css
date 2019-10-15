@@ -1,0 +1,277 @@
+* {
+    box-sizing: border-box;
+}
+
+/*Global fonts and color*/
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fae8c8;
+    color: #4E4E4E;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ubuntu', sans-serif;
+}
+#divPanierStatus{
+    float: right;
+    margin-top: 2.6rem;
+}
+#divProductsLine{
+    height: 100px;
+    float: left;
+}
+.h2Products{
+    text-align: center;
+}
+.classPanier{
+    text-align: center;
+    margin-left: -10rem;
+}
+#idLine {
+    margin-top: 4.5rem;
+}
+#idLine {
+    border: 2px solid red;
+}
+.btn-panier{
+    position: center;
+}
+
+
+/*Header*/
+.nav-wrapper {
+    background-color: #c9d99e;
+    color: #4E4E4E;
+}
+
+.nav-wrapper a {
+    color: #4E4E4E;
+    display: inline-block;
+}
+
+#header {
+    -webkit-box-shadow: 0 0 5px 0 rgba(78, 78, 78, 0.5);
+    -moz-box-shadow: 0 0 5px 0 rgba(78, 78, 78, 0.5);
+    box-shadow: 0 0 5px 0 rgba(78, 78, 78, 0.5);
+}
+
+#header .brand-logo {
+    padding-left: 10px;
+    font-size: 25px;
+    position: relative;
+}
+
+#header .material-icons {
+    color: #4E4E4E;
+    font-size: 40px;
+}
+
+#header #abonnements {
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.sidenav-overlay {
+    z-index: 99;
+}
+
+/*Footer*/
+.page-footer {
+    background-color: #c9d99e;
+    color: #4E4E4E;
+    padding-bottom: 20px;
+}
+
+.page-footer p {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#title-contact {
+    padding-bottom: 1%;
+}
+
+.footer-copyright div {
+    color: #4E4E4E;
+}
+
+#content-footer {
+    color: #4E4E4E;
+}
+
+
+/*Titles*/
+#title-page {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+#title-page>h5 {
+    font-style: italic;
+    display: inline-block;
+    padding-left: 80px;
+}
+#title-page>h5 span.lineBar {
+    display: block;
+    position: absolute;
+    right: 50px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#title-page>h5 span.state-order {
+    display: inline-block;
+    font-style: normal;
+    position: absolute;
+    padding-left: 50px;
+    font-size: 18px;
+    right: 50px;
+    background-color: #F6F6F6;
+}
+
+/*Vitrine*/
+#vitrine-page a {
+    color: #4E4E4E;
+    text-decoration: none;
+}
+#vitrine-page #presentation-boutique {
+    padding-top: 80px;
+    padding-left: 80px;
+}
+
+
+/*Abonnements*/
+#cards-abonnement>.row {
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+#cards-abonnement>.row>div:last-child::after {
+    width: 2px;
+    height: calc(100% + 100px);
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 1px);
+    background-color: rgba(0,0,0,0.3);
+    content: "";
+}
+#cards-abonnement .card-title {
+    font-style: italic;
+    font-weight: initial;
+}
+#cards-abonnement .details {
+    text-decoration: underline;
+}
+#cards-abonnement h6 {
+    margin-bottom: 25px;
+}
+#cards-abonnement p {
+    margin-bottom: 25px;
+}
+#cards-abonnement .card-action {
+    padding-top: 30px;
+}
+#cards-abonnement .title-price {
+    text-decoration: underline;
+}
+#cards-abonnement .price {
+    margin-left: 20px;
+    text-decoration: none;
+}
+#cards-abonnement .btn.waves-effect.waves-light {
+    border-radius: 20px;
+}
+
+/*Boutique*/
+#idCardTitle {
+    color: #4E4E4E;
+}
+
+/*Scroll to top*/
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#scrollToTop a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    transform: rotate(90deg);
+    line-height: 50px;
+    border: 1px #9BFFBC solid;
+    color: #4E4E4E;
+    border-radius: 5px;
+}
+
+#scrollToTop a:hover {
+    background: #9BFFBC;
+    color: #4E4E4E;
+}
+
+#scrollToTop a i {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 30px;
+}
+
+#containerCards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Media Query*/
+@media screen and (max-width: 992px) {
+    nav .brand-logo {
+        left: unset;
+        transform: translateX(-10%);
+    }
+    nav .nav-wrapper {
+        text-align: right;
+    }
+    #title-page {
+        margin-top: 25px;
+        margin-bottom: 30px;
+    }
+
+    div .container-logo #svg-logo {
+        margin-left: inherit !important;
+    }
+    #title-page>h5 {
+        display: block;
+        padding-left: 0;
+        text-align: center !important;
+    }
+    #title-page>h5 span {
+        display: block;
+        position: unset !important;
+        margin: 20px 0;
+        margin-left: 80px;
+        width: calc(100% - 160px);
+    }
+    #cards-abonnement>.row>div:last-child::after {
+        content: unset;
+    }
+
+    #labelInscription{
+        margin-left: 2rem;
+        text-align: center;
+    }
+    #vitrine-page #presentation-boutique {
+        padding-top: 0;
+        padding-left: 0;
+    }
+    #vitrine-page h3 {
+        text-align: center;
+    }
+}
+
+#status {
+    color: red;
+}
+.valid {
+    color: #19df00 !important;
+}
