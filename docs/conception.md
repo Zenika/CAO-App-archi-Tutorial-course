@@ -5,4 +5,4 @@ Some unicorns are available for everybody, every kind of customers.
 
 #### Perimeter Application 
 
-![perimeter-application-screen](./assets/perimeter-application-screen.PNG)
+![perimeter-application-screen](assets/perimeter-application-screen.PNG)
