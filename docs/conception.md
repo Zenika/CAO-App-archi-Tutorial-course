@@ -1,13 +1,13 @@
-# Unicorn Location
+# Unicorn Renting
 
 This project is a web application that allows our customers to rent a unicorn.
-Every unicorns are available for every kind of customers.
+Each customer will find a unicorn that suits them the most.
 
 #### Application Permineter
 
 ![perimeter-application-screen](assets/perimeter-application-screen.png)
 
-#### Application's Functionalities
+#### Application Functionalities
 
 In this application, staff members will be able to manage users, products and renting for customers who will come to our agency. 
 You can see these functionalities in the use case below: 
