@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Licorne;
+use App\Repository\LicorneRepository;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,9 +17,20 @@ class BddController extends AbstractController {
      */
     private $twig;
 
-    public function __construct(Environment $twig)
+    /**
+     * @var LicorneRepository
+     */
+    private $repository;
+    /**
+     * @var ObjectManager
+     */
+    private $em;
+
+    public function __construct(LicorneRepository $repository, Environment $twig, ObjectManager $em)
     {
+        $this->repository = $repository;
         $this->twig = $twig;
+        $this->em = $em;
     }
 
     /**
@@ -29,17 +42,11 @@ class BddController extends AbstractController {
      */
     public function index(): Response
     {
-//        $myUnicorn = new Licorne();
-//        $myUnicorn->setNom('Fougueuse ballerine')
-//            ->setCouleur('Dark-Mauve')
-//            ->setDisponible(true)
-//            ->setModele('Edition Dark turbo')
-//            ->setPrix(8999,99);
-//        $em = $this->getDoctrine()->getManager();
-//        $em->persist($myUnicorn);
-//        $em->flush();
-        $repo = $this->getDoctrine()->getRepository(Licorne::class);
-        dump($repo);
-        return new Response($this->twig->render('pages/data.html.twig'));
+        $myData = $this->repository->findAll();
+        $this->em->flush();
+        dump($myData);
+        return new Response($this->twig->render('pages/data.html.twig', [
+            'allUnicorn' => $myData
+        ]));
     }
 }
