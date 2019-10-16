@@ -15,16 +15,17 @@ class CreateRentTable extends Migration
     {
         Schema::create('rent', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('sealion_id')->unsigned();
-            $table->integer('option_id')->unsigned();
             $table->text('rent');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
 
-            $table->foreign('sealion_id')->references('id')->on('sealion')
-            ->onDelete('cascade');
-            $table->foreign('option_id')->references('id')->on('option')
-                ->onDelete('cascade');
+        });
+
+        Schema::table('rent', function (Blueprint $table) {
+            $table->unsignedBigInteger('sealion_id');
+            $table->unsignedBigInteger('option_id');
+            $table->foreign('sealion_id')->references('id')->on('sealion')->onDelete('cascade');
+            $table->foreign('option_id')->references('id')->on('option')->onDelete('cascade');
         });
     }
 

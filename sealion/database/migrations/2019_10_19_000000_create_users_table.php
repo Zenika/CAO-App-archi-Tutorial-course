@@ -21,10 +21,11 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('lvl');
             $table->rememberToken();
-            $table->integer('rent_id')->unsigned();
+        });
 
-            $table->foreign('rent_id')->references('id')->on('rent')
-                ->onDelete('cascade');
+        Schema::table('rent', function (Blueprint $table) {
+            $table->unsignedBigInteger('rent_id');
+            $table->foreign('rent_id')->references('id')->on('rent')->onDelete('cascade');
         });
     }
 
