@@ -14,13 +14,13 @@ public class Product implements Serializable {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "productId")
+	@Column(name = "product_id")
 	private Integer productId;
-	@Column(name = "nameProduct")
+	@Column(name = "name_product")
 	private String nameProduct;
 	@Column(name = "price")
 	private int price;
-	@Column(name = "isRented")
+	@Column(name = "is_rented")
 	private boolean isRented;
 
 	public Product() {
