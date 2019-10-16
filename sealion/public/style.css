@@ -64,11 +64,12 @@ strong {
 header {
     height: 40px;
     position: fixed;
-    left: 300px;
+    left: 65px;
     right: 0;
     top: 0;
     padding: 10px 20px;
-    background: #1e0411 ;
+    background: #1e0411;
+    transition: 300ms ease;
 }
 
 aside {
@@ -76,15 +77,16 @@ aside {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 300px;
+    width: 65px;
     border-right: 1px #333 solid;
     background: #951555;
     color: #333;
     padding: 10px 20px !important;
+    transition: 300ms ease;
 }
 main {
     position: fixed;
-    left: 300px;
+    left: 65px;
     top: 40px;
     right: 0;
     bottom: 0;
@@ -94,6 +96,7 @@ main {
     -webkit-box-shadow: inset 10px 5px 15px 1px rgba(30,4,17,0.3);
     -moz-box-shadow: inset 10px 5px 15px 1px rgba(30,4,17,0.3);
     box-shadow: inset 10px 5px 15px 1px rgba(30,4,17,0.3);
+    transition: 300ms ease;
 }
 main>.nano>.nano-content {
     padding-right: 20px;
@@ -300,4 +303,14 @@ header * {
     background-color: #fafafa;
     transition: 200ms ease;
     color: #1e0411 !important;
+}
+
+.menu-expanded {
+    left: 300px;
+    transition: 500ms ease;
+}
+
+.menu-expanded-aside {
+    width: 300px;
+    transition: 500ms ease;
 }
