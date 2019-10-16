@@ -1,8 +1,24 @@
 {% extends 'base.html.twig' %}
 
+{% block title 'DataController | FriendShipIsMagic' %}
+
 {% block body %}
     <button type="button" class="btn btn-dark _back" style="position: absolute; top: 5px; left: 5px;"><a style="color: aliceblue" href="{{ path('home.index') }}">Return to Home</a></button>
     <div class="jumbotron text-center">
         <h3>Data Controller</h3>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-6">
+                <div class="text-center">
+                    <h3>Data Manager</h3>
+                </div>
+            </div>
+            <div class="col col-6">
+                <div class="text-center">
+                    <h3>Data render</h3>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
