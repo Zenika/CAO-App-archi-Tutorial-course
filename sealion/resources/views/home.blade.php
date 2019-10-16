@@ -13,7 +13,7 @@
 @yield('content')
 
 <aside>
-
+    @include('includes.menu')
 </aside>
 
 <main>

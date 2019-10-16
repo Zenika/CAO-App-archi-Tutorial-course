@@ -95,7 +95,31 @@ main {
 main>.nano>.nano-content {
     padding-right: 20px;
 }
-
+aside ul, aside li {
+    display: block;
+    width: 100%;
+    padding: 0;
+}
+aside {
+    padding: 10px;
+}
+aside a {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    border: none;
+    text-decoration: none;
+}
+aside a:hover {
+    text-decoration: none;
+}
+aside label {
+    width: 100%;
+}
+aside input {
+    width: 100%;
+    padding: 5px;
+}
 #scrollToTop {
     display: block;
     position: fixed;
