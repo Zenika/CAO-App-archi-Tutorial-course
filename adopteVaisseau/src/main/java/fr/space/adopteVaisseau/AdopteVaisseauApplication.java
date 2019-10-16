@@ -12,9 +12,4 @@ public class AdopteVaisseauApplication extends SpringBootServletInitializer {
 		SpringApplication.run(AdopteVaisseauApplication.class, args);
 	}
 
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(AdopteVaisseauApplication.class);
-	}
-
 }
