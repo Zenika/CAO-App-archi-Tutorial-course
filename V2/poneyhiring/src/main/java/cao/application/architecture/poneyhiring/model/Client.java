@@ -16,7 +16,12 @@ public class Client {
     public String lastName;
 
     public Client() {
+        super();
+    }
 
+    public Client(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     @Override
