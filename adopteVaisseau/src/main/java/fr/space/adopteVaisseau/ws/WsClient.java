@@ -1,4 +1,4 @@
-package fr.space.adopteVaisseau.controller;
+package fr.space.adopteVaisseau.ws;
 
 import fr.space.adopteVaisseau.entity.Client;
 import fr.space.adopteVaisseau.manager.ClientManager.ClientService;
@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-public class controllerClient {
+@RestController()
+@RequestMapping("/api")
+public class WsClient {
 
     @Autowired
     private ClientService clientService;
 
-    @GetMapping("/")
-    public List<Client> getAll(){
+    @GetMapping("client")
+    public List<Client> getClients() {
         return clientService.findAll();
     }
 
-    @PostMapping("/client")
-    public void addClient(@ModelAttribute Client client){
-        clientService.create(client);
-    }
+    @PostMapping
+    public void addClient(@RequestBody Client client){clientService.create(client);}
+
 }
