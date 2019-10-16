@@ -12,9 +12,14 @@ body {
     font-size: 18px;
 }
 
+p, ul, li, blockquote, img {
+    margin-bottom: 20px;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+    margin-bottom: 20px;
 }
 
 h1 {
