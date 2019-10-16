@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('lvl');
             $table->rememberToken();
-            $table->integer('rent_id')->unsigned();
+            $table->unsignedInteger('rent_id');
 
             $table->foreign('rent_id')->references('id')->on('rent')
                 ->onDelete('cascade');
