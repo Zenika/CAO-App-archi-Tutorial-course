@@ -11,20 +11,43 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    public Long id;
-    public String firstName;
+    public int customerId;
     public String lastName;
+    public String firstName;
+    public String email;
+    public String phoneNumber;
+    public String address;
+    public String postalCode;
+    public String city;
+    public String country;
+    public Boolean paymentValidate;
 
-    public Customer() {
-
+    public Customer(String lastName, String firstName, String email, String phoneNumber, String address,
+                    String postalCode, String city, String country, Boolean paymentValidate) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.postalCode = postalCode;
+        this.city = city;
+        this.country = country;
+        this.paymentValidate = paymentValidate;
     }
 
     @Override
     public String toString() {
-        return "Client{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
+        return "Customer{" +
+                "id=" + customerId +
                 ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", address='" + address + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", paymentValidate='" + paymentValidate + '\'' +
                 '}';
     }
 
@@ -32,14 +55,105 @@ public class Customer {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Customer client = (Customer) o;
-        return Objects.equals(id, client.id) &&
-                Objects.equals(firstName, client.firstName) &&
-                Objects.equals(lastName, client.lastName);
+        Customer customer = (Customer) o;
+        return Objects.equals(customerId, customer.customerId) &&
+                Objects.equals(lastName, customer.lastName) &&
+                Objects.equals(firstName, customer.firstName) &&
+                Objects.equals(email, customer.email) &&
+                Objects.equals(phoneNumber, customer.phoneNumber) &&
+                Objects.equals(address, customer.address) &&
+                Objects.equals(postalCode, customer.postalCode) &&
+                Objects.equals(city, customer.city) &&
+                Objects.equals(country, customer.country) &&
+                Objects.equals(paymentValidate, customer.paymentValidate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName);
+        return Objects.hash(customerId, lastName, firstName, email, phoneNumber, address,
+                postalCode, city, country, paymentValidate);
+    }
+
+
+
+    //getter/setter
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public Boolean getPaymentValidate() {
+        return paymentValidate;
+    }
+
+    public void setPaymentValidate(Boolean paymentValidate) {
+        this.paymentValidate = paymentValidate;
     }
 }

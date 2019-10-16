@@ -11,21 +11,24 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    public Long id;
-    public String name;
-    public String type;
+    public int productId;
+    public String nameProduct;
+    public int price;
+    public Boolean isRented;
 
-    public Product(String name, String type) {
-        this.name = name;
-        this.type = type;
+    public Product(String nameProduct, int price, Boolean isRented) {
+        this.nameProduct = nameProduct;
+        this.price = price;
+        this.isRented = isRented;
     }
 
     @Override
     public String toString() {
-        return "Poney{" +
-                "id=" + id +
-                ", firstName='" + name + '\'' +
-                ", lastName='" + type + '\'' +
+        return "Product{" +
+                "id=" + productId +
+                ", nameProduct='" + nameProduct + '\'' +
+                ", price='" + price + '\'' +
+                ", isRented='" + isRented + '\'' +
                 '}';
     }
 
@@ -34,13 +37,48 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Objects.equals(id, product.id) &&
-                Objects.equals(name, product.name) &&
-                Objects.equals(type, product.type);
+        return Objects.equals(productId, product.productId) &&
+                Objects.equals(nameProduct, product.nameProduct) &&
+                Objects.equals(price, product.price) &&
+                Objects.equals(isRented, product.isRented);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type);
+        return Objects.hash(productId, nameProduct, price, isRented);
+    }
+
+    //getter/setter
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public String getNameProduct() {
+        return nameProduct;
+    }
+
+    public void setNameProduct(String nameProduct) {
+        this.nameProduct = nameProduct;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public Boolean getRented() {
+        return isRented;
+    }
+
+    public void setRented(Boolean rented) {
+        isRented = rented;
     }
 }
