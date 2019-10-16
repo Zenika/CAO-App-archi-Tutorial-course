@@ -20,7 +20,6 @@ class CreateRentTable extends Migration
             $table->text('rent');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
-            $table->integer('user_id')->unsigned();
 
             $table->foreign('sealion_id')->references('id')->on('sealion')
             ->onDelete('cascade');
