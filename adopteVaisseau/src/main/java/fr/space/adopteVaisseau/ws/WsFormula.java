@@ -20,12 +20,12 @@ public class WsFormula {
         return formulaService.findAll();
     }
 
-    @PostMapping
+    @PostMapping("add-formula")
     public void addFormula(@Valid @RequestBody Formula formula){formulaService.create(formula);}
 
-    @DeleteMapping
+    @DeleteMapping("delete-formula")
     public void deleteFormula(@Valid @RequestBody Formula formula){formulaService.delete(formula);}
 
-    @PutMapping
-    public void updateFormula(){}
+    @PutMapping("update-formula")
+    public void updateFormula(@Valid @RequestBody Formula formula){formulaService.create(formula);}
 }

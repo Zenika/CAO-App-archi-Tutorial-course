@@ -26,10 +26,11 @@ public class WsClient {
         clientService.create(client);
     }
 
-    @DeleteMapping
+    @DeleteMapping("deleteClient")
     public void deleteClient(@Valid @RequestBody Client client){clientService.delete(client);}
 
-    @PutMapping
-    public void updateClient(){}
+    @PutMapping("update-client")
+    public void updateClient(@Valid @RequestBody Client client){
+        clientService.create(client);}
 
 }

@@ -22,12 +22,12 @@ public class WsShip {
         return shipService.findAll();
     }
 
-    @PostMapping
+    @PostMapping("add-ship")
     public void addShip(@Valid @RequestBody Ship ship){shipService.create(ship);}
 
-    @DeleteMapping
+    @DeleteMapping("delete-ship")
     public void deleteShip(@Valid @RequestBody Ship ship){shipService.delete(ship);}
 
-    @PutMapping
-    public void updateShip(){}
+    @PutMapping("update-ship")
+    public void updateShip(@Valid @RequestBody Ship ship){shipService.create(ship);}
 }

@@ -20,12 +20,12 @@ public class WsLocation {
         return locationService.findAll();
     }
 
-    @PostMapping
+    @PostMapping("add-location")
     public void addLocation(@Valid @RequestBody Location location){locationService.create(location);}
 
-    @DeleteMapping
+    @DeleteMapping("delete-location")
     public void deleteLocation(@Valid @RequestBody Location location){locationService.delete(location);}
 
-    @PutMapping
-    public void updateLocation(){}
+    @PutMapping("update-location")
+    public void updateLocation(@Valid @RequestBody Location location){locationService.create(location);}
 }

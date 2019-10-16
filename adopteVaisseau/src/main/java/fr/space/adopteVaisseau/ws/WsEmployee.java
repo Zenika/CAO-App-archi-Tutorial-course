@@ -21,12 +21,12 @@ public class WsEmployee {
         return employeeService.findAll();
     }
 
-    @PostMapping
+    @PostMapping("add-employee")
     public void addEmployee(@Valid @RequestBody Employee employee){employeeService.create(employee);}
 
-    @DeleteMapping
+    @DeleteMapping("delete-employee")
     public void deleteEmployee(@Valid @RequestBody Employee employee){employeeService.delete(employee);}
 
-    @PutMapping
-    public void updateEmployee(){}
+    @PutMapping("update-employee")
+    public void updateEmployee(@Valid @RequestBody Employee employee){employeeService.create(employee);}
 }

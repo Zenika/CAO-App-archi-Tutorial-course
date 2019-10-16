@@ -20,12 +20,12 @@ public class WsStock {
         return stockService.findAll();
     }
 
-    @PostMapping
+    @PostMapping("add-stock")
     public void addStock(@Valid @RequestBody Stock stock){stockService.create(stock);}
 
-    @DeleteMapping
+    @DeleteMapping("delete-stock")
     public void deleteStock(@Valid @RequestBody Stock stock){stockService.delete(stock);}
 
-    @PutMapping
-    public void updateStock(){}
+    @PutMapping("update-stock")
+    public void updateStock(@Valid @RequestBody Stock stock){stockService.create(stock);}
 }
