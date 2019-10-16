@@ -6,8 +6,6 @@
 body {
     font-family: 'Lato', sans-serif;
     color: #333;
-    padding-top: 50px;
-    padding-left: 300px;
     font-weight: 500;
     font-size: 18px;
 }
@@ -78,7 +76,7 @@ header {
 aside {
     position: fixed;
     left: 0;
-    top: 0;
+    top: 40px;
     bottom: 0;
     width: 300px;
     border-right: 1px #333 solid;
@@ -94,17 +92,39 @@ main {
     color: #333;
     scroll-behavior: smooth;
 }
-
-a {
+main>.nano>.nano-content {
+    padding-right: 20px;
+}
+aside ul, aside li {
     display: block;
     width: 100%;
+    padding: 0;
 }
-
+aside {
+    padding: 10px;
+}
+aside a {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    border: none;
+    text-decoration: none;
+}
+aside a:hover {
+    text-decoration: none;
+}
+aside label {
+    width: 100%;
+}
+aside input {
+    width: 100%;
+    padding: 5px;
+}
 #scrollToTop {
     display: block;
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 40px;
     width: 50px;
     height: 50px;
     opacity: 0;
@@ -115,6 +135,7 @@ a {
 
 #scrollToTop.open {
     opacity: 1;
+    transition: 0.5s ease-in-out;
 }
 
 
