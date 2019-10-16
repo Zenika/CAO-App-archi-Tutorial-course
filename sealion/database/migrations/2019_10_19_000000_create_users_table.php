@@ -20,12 +20,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->integer('lvl');
-            $table->rememberToken();
         });
 
         Schema::table('users', function (Blueprint $table) {
             $table->unsignedBigInteger('rent_id');
-            $table->foreign('rent_id')->references('id')->on('rent')->onDelete('cascade');
+            $table->foreign('rent_id')->references('id')->on('rents')->onDelete('cascade');
         });
     }
 

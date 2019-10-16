@@ -13,11 +13,10 @@ class CreateSealionTable extends Migration
      */
     public function up()
     {
-        Schema::create('sealion', function (Blueprint $table) {
+        Schema::create('sealions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('calibre');
-            $table->integer('kilometrage');
-            $table->integer('confort');
+            $table->integer('caliber');
+            $table->integer('miles');
             $table->integer('speed');
             $table->timestamp('period');
         });

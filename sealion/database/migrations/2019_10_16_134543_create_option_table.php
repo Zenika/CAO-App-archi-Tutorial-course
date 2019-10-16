@@ -13,11 +13,12 @@ class CreateOptionTable extends Migration
      */
     public function up()
     {
-        Schema::create('option', function (Blueprint $table) {
+        Schema::create('options', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('name');
             $table->text('description');
             $table->float('price');
+            $table->integer('comfort');
         });
     }
 

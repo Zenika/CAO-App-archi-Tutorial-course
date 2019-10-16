@@ -13,7 +13,7 @@ class CreateRentTable extends Migration
      */
     public function up()
     {
-        Schema::create('rent', function (Blueprint $table) {
+        Schema::create('rents', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('rent');
             $table->dateTime('start_date');
@@ -21,12 +21,12 @@ class CreateRentTable extends Migration
 
         });
 
-        Schema::table('rent', function (Blueprint $table) {
+        Schema::table('rents', function (Blueprint $table) {
             $table->unsignedBigInteger('sealion_id');
             $table->unsignedBigInteger('option_id');
             
-            $table->foreign('sealion_id')->references('id')->on('sealion')->onDelete('cascade');
-            $table->foreign('option_id')->references('id')->on('option')->onDelete('cascade');
+            $table->foreign('sealion_id')->references('id')->on('sealions')->onDelete('cascade');
+            $table->foreign('option_id')->references('id')->on('options')->onDelete('cascade');
         });
     }
 
