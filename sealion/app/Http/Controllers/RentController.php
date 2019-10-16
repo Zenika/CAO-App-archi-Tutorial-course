@@ -10,8 +10,15 @@ class RentController extends Controller
 
     public function getRents() 
     {
-        $rent = Rent::all();
+        $rents = Rent::all();
         
+        return response()->json([$rents]);
+    }
+
+    public function getRent($id) 
+    {
+        $rent = Rent::findOrFail($id);
+
         return response()->json([$rent]);
     }
 

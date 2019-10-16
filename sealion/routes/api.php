@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/rents', [
     'uses' => 'RentController@getRents'
 ]);
-Route::get('/rents/{id}', [
+Route::get('/rent/{id}', [
     'uses' => 'RentController@getRent'
 ]);
 
@@ -36,14 +36,4 @@ Route::get('/options', [
 ]);
 Route::get('/options/{id}', [
     'uses' => 'OptionController@getOption'
-]);
-
-Route::post('/songs', [
-    'uses' => 'SongController@postSong'
-]);
-Route::put('/songs/{id}', [
-    'uses' => 'SongController@putSong'
-]);
-Route::delete('/songs/{id}', [
-    'uses' => 'SongController@deleteSong'
 ]);
