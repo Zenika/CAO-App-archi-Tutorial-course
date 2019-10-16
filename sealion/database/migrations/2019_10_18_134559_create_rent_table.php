@@ -24,6 +24,7 @@ class CreateRentTable extends Migration
         Schema::table('rent', function (Blueprint $table) {
             $table->unsignedBigInteger('sealion_id');
             $table->unsignedBigInteger('option_id');
+            
             $table->foreign('sealion_id')->references('id')->on('sealion')->onDelete('cascade');
             $table->foreign('option_id')->references('id')->on('option')->onDelete('cascade');
         });
