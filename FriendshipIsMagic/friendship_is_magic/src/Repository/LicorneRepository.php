@@ -19,6 +19,17 @@ class LicorneRepository extends ServiceEntityRepository
         parent::__construct($registry, Licorne::class);
     }
 
+    /**
+     * @return array
+     */
+    public function findAllAllow(): array
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.disponible = true')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Licorne[] Returns an array of Licorne objects
     //  */
