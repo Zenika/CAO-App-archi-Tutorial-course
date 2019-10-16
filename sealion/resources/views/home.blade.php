@@ -12,8 +12,34 @@
 </header>
 @yield('content')
 
+<aside>
+
+</aside>
+
 <main>
-    Hello World
+    <div class="nano">
+        <div class="nano-content">
+            <a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a href="">Hey</a><a
+                href="">Hey</a><a href="">Hey</a>
+        </div>
+    </div>
 </main>
 
 <footer>
