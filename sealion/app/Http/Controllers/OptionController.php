@@ -18,6 +18,6 @@ class OptionController extends Controller
     {
         $option = Option::findOrFail($id);
 
-        return response() ->json($option);
+        return response()->json($option);
     }
 }

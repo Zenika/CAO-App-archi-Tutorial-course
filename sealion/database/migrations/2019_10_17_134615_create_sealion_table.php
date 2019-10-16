@@ -18,7 +18,7 @@ class CreateSealionTable extends Migration
             $table->integer('caliber');
             $table->integer('miles');
             $table->integer('speed');
-            $table->timestamp('period');
+            $table->integer('period');
         });
     }
 

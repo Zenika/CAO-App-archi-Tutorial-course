@@ -20,15 +20,25 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/rents', [
     'uses' => 'RentController@getRents'
 ]);
+
 Route::get('/rent/{id}', [
     'uses' => 'RentController@getRent'
+]);
+
+Route::post('/rent', [
+    'uses' => 'RentController@addRent'
 ]);
 
 Route::get('/sealions', [
     'uses' => 'SealionController@getSealions'
 ]);
+
 Route::get('/sealions/{id}', [
     'uses' => 'SealionController@getSealion'
+]);
+
+Route::post('/sealion', [
+    'uses' => 'SealionController@addSealion'
 ]);
 
 Route::get('/options', [
@@ -41,6 +51,7 @@ Route::get('/options/{id}', [
 Route::get('/users', [
     'uses' => 'UserController@getUsers'
 ]);
+
 Route::get('/user/{id}', [
     'uses' => 'UserController@getUser'
 ]);

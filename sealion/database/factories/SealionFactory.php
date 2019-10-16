@@ -10,6 +10,6 @@ $factory->define(Sealion::class, function (Faker $faker) {
         'caliber' => rand(1, 100),
         'miles' => rand(10000, 200000),
         'speed' => rand(1, 5),
-        'period' => $faker->dateTime
+        'period' => rand(1, 20000)
     ];
 });
