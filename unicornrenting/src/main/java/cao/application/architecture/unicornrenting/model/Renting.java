@@ -1,9 +1,6 @@
 package cao.application.architecture.unicornrenting.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 
@@ -16,6 +13,14 @@ public class Renting {
     public Date startDate;
     public Date endDate;
 
+    @OneToMany
+    @JoinColumn(name = "customer_id", table = "customer")
+    public int customerId;
+
+    @OneToOne
+    @JoinColumn(name = "product_id", table = "product")
+    public int productId;
+
     public Renting(Date startDate, Date endDate) {
         this.startDate = startDate;
         this.endDate = endDate;
@@ -24,9 +29,9 @@ public class Renting {
     @Override
     public String toString() {
         return "Renting{" +
-                "rentingId=" + rentingId +
-                ", startDate='" + startDate + '\'' +
-                ", endDate='" + endDate + '\'' +
+                "renting_id=" + rentingId +
+                ", start-date='" + startDate + '\'' +
+                ", end_date='" + endDate + '\'' +
                 '}';
     }
 

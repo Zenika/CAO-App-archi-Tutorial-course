@@ -25,10 +25,10 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + productId +
-                ", nameProduct='" + nameProduct + '\'' +
+                "product_id=" + productId +
+                ", name_product='" + nameProduct + '\'' +
                 ", price='" + price + '\'' +
-                ", isRented='" + isRented + '\'' +
+                ", is_rented='" + isRented + '\'' +
                 '}';
     }
 

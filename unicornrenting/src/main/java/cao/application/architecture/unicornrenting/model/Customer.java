@@ -1,9 +1,6 @@
 package cao.application.architecture.unicornrenting.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -20,10 +17,13 @@ public class Customer {
     public String postalCode;
     public String city;
     public String country;
-    public Boolean paymentValidate;
+    public Boolean paymentValidated;
+
+    @JoinColumn(name= "staff_id", table = "staff")
+    public int staffId;
 
     public Customer(String lastName, String firstName, String email, String phoneNumber, String address,
-                    String postalCode, String city, String country, Boolean paymentValidate) {
+                    String postalCode, String city, String country, Boolean paymentValidated) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.email = email;
@@ -32,22 +32,22 @@ public class Customer {
         this.postalCode = postalCode;
         this.city = city;
         this.country = country;
-        this.paymentValidate = paymentValidate;
+        this.paymentValidated = paymentValidated;
     }
 
     @Override
     public String toString() {
         return "Customer{" +
-                "id=" + customerId +
-                ", lastName='" + lastName + '\'' +
-                ", firstName='" + firstName + '\'' +
+                "customer_id=" + customerId +
+                ", last_name='" + lastName + '\'' +
+                ", first_name='" + firstName + '\'' +
                 ", email='" + email + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
+                ", phone_number='" + phoneNumber + '\'' +
                 ", address='" + address + '\'' +
-                ", postalCode='" + postalCode + '\'' +
+                ", postal_code='" + postalCode + '\'' +
                 ", city='" + city + '\'' +
                 ", country='" + country + '\'' +
-                ", paymentValidate='" + paymentValidate + '\'' +
+                ", payment_validated='" + paymentValidated + '\'' +
                 '}';
     }
 
@@ -65,13 +65,13 @@ public class Customer {
                 Objects.equals(postalCode, customer.postalCode) &&
                 Objects.equals(city, customer.city) &&
                 Objects.equals(country, customer.country) &&
-                Objects.equals(paymentValidate, customer.paymentValidate);
+                Objects.equals(paymentValidated, customer.paymentValidated);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(customerId, lastName, firstName, email, phoneNumber, address,
-                postalCode, city, country, paymentValidate);
+                postalCode, city, country, paymentValidated);
     }
 
 
@@ -149,11 +149,11 @@ public class Customer {
         this.country = country;
     }
 
-    public Boolean getPaymentValidate() {
-        return paymentValidate;
+    public Boolean getPaymentValidated() {
+        return paymentValidated;
     }
 
-    public void setPaymentValidate(Boolean paymentValidate) {
-        this.paymentValidate = paymentValidate;
+    public void setPaymentValidated(Boolean paymentValidated) {
+        this.paymentValidated = paymentValidated;
     }
 }

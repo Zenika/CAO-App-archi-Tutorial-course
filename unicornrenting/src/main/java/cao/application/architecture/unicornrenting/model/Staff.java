@@ -29,9 +29,9 @@ public class Staff {
     @Override
     public String toString() {
         return "Staff{" +
-                "staffId=" + staffId +
-                ", lastName='" + lastName + '\'' +
-                ", firstName='" + firstName + '\'' +
+                "staff_id=" + staffId +
+                ", last_name='" + lastName + '\'' +
+                ", first_name='" + firstName + '\'' +
                 ", login='" + login + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
