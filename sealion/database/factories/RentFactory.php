@@ -20,7 +20,7 @@ $factory->define(Rent::class, function (Faker $faker) {
         'rent' => $faker->unique()->uuid,
         'start_date' => $faker->dateTime,
         'end_date' => $faker->dateTimeBetween('now', '1 week'),
-        'sealion_id' => $faker->numberBetween(1, 6),
+        'sealion_id' => $faker->numberBetween(1, 4),
         'option_id' => $faker->numberBetween(1, 3),
     ];
 });
