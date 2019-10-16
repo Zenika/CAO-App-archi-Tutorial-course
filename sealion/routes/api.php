@@ -37,3 +37,10 @@ Route::get('/options', [
 Route::get('/options/{id}', [
     'uses' => 'OptionController@getOption'
 ]);
+
+Route::get('/users', [
+    'uses' => 'UserController@getUsers'
+]);
+Route::get('/user/{id}', [
+    'uses' => 'UserController@getUser'
+]);

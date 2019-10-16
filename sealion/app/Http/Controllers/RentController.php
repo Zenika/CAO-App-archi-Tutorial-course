@@ -12,14 +12,14 @@ class RentController extends Controller
     {
         $rents = Rent::all();
         
-        return response()->json([$rents]);
+        return response()->json($rents);
     }
 
     public function getRent($id) 
     {
         $rent = Rent::findOrFail($id);
 
-        return response()->json([$rent]);
+        return response()->json($rent);
     }
 
 }
