@@ -3,7 +3,7 @@
         <a href="/">Home</a>
     </li>
     <li>
-        <a href="#sealion" data-toggle="collapse" class="collapsed" aria-expanded="false" >Sea Lions</a>
+        <a href="#sealion" data-toggle="collapse" id="sealion-item" class="collapsed" aria-expanded="false" >Sea Lions</a>
         <div id="sealion" aria-expanded="false" class="collapse">
             <form action="#">
                 <label for="confort">Confort</label>
@@ -21,7 +21,7 @@
         </div>
     </li>
     <li>
-        <a href="#account" class="collapsed" data-toggle="collapse">My Account</a>
+        <a href="#account" class="collapsed" id="account-item" data-toggle="collapse">My Account</a>
         <div id="account" class="collapse" aria-expanded="false">
             <form action="#">
                 <label for="">Login</label>

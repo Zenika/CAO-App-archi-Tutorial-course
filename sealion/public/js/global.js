@@ -15,4 +15,14 @@ $("main .nano-content").on("scroll", function (event) {
     } else {
         $("#scrollToTop").removeClass("open");
     }
-})
+});
+
+$('.collapsed').mouseenter((e) => {
+    let item = e.target.id;
+    $(`#${item}`).toggleClass('item-active');
+});
+
+$('.collapsed').mouseleave((e) => {
+    let item = e.target.id;
+    $(`#${item}`).toggleClass('item-active');
+});
