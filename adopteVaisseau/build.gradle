@@ -23,8 +23,5 @@ dependencies {
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'mysql:mysql-connector-java'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	compile group: 'org.springframework', name: 'spring-webmvc', version: '5.1.10.RELEASE'
-	// https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
-	compile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
 
 }

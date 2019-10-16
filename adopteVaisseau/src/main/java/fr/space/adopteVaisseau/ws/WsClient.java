@@ -1,5 +1,6 @@
 package fr.space.adopteVaisseau.ws;
 
+import fr.space.adopteVaisseau.dto.ClientDto;
 import fr.space.adopteVaisseau.entity.Client;
 import fr.space.adopteVaisseau.manager.ClientManager.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,9 @@ public class WsClient {
         return clientService.findAll();
     }
 
-    @PostMapping
-    public void addClient(@RequestBody Client client){clientService.create(client);}
+    @PostMapping("add-client")
+    public void addClient(@RequestBody Client client){
+        clientService.create(client);
+    }
 
 }
