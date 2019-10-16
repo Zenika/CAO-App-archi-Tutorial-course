@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
         });
 
-        Schema::table('rent', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             $table->unsignedBigInteger('rent_id');
             $table->foreign('rent_id')->references('id')->on('rent')->onDelete('cascade');
         });
