@@ -17,12 +17,8 @@ $("main .nano-content").on("scroll", function (event) {
     }
 });
 
-$('.collapsed').mouseenter((e) => {
-    let item = e.target.id;
-    $(`#${item}`).toggleClass('item-active');
-});
-
-$('.collapsed').mouseleave((e) => {
-    let item = e.target.id;
-    $(`#${item}`).toggleClass('item-active');
+$('#burger-menu').click(() => {
+    $('main').toggleClass('menu-expanded');
+    $('aside').toggleClass('menu-expanded-aside');
+    $('header').toggleClass('menu-expanded');
 });
