@@ -134,7 +134,31 @@ input {
     border-width: 1px;
 }
 
+header * {
+    font-family: 'Montserrat', sans-serif;
+}
+
 /** BACKGROUND **/
+
+.dark {
+    color: #45454d !important;
+}
+
+.light {
+    color: #fafafa;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.stronger {
+    font-weight: 900;
+}
 
 .bg-primary {
     background: #ff4893;

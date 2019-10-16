@@ -6,7 +6,7 @@
     @include('includes.head')
 </head>
 <body>
-<header>
+<header class="text-right">
     <!-- INCLUDE HEADER-->
     @include('includes.header')
 </header>
