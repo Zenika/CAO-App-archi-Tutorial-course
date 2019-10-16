@@ -1,6 +1,8 @@
 package fr.space.adopteVaisseau.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -10,12 +12,19 @@ public class Employee {
     @GeneratedValue
     private Long id;
 
+    @NotEmpty(message = "Provide a first name please")
+    @Size(max = 50)
     private String firstName;
 
+    @NotEmpty(message = "Provide a last name please")
+    @Size(max = 50)
     private String lastName;
 
+    @NotEmpty(message = "Provide a mail  adress please")
+    @Size(max = 40)
     private String mail;
 
+    @NotEmpty(message = "Provide a password please")
     private String password;
 
 

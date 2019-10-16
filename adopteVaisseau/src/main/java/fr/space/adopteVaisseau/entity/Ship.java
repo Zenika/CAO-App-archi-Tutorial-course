@@ -1,6 +1,9 @@
 package fr.space.adopteVaisseau.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -10,10 +13,13 @@ public class Ship {
     @GeneratedValue
     private Long id;
 
+    @NotNull
     private boolean isAvailable;
 
+    @NotEmpty
     private String description;
 
+    @NotNull
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private Stock stock;
 
