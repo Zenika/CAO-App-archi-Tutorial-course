@@ -52,14 +52,6 @@ td {
     border: 1px #333 solid;
 }
 
-a {
-    color: #ff4893;
-}
-
-a:hover {
-    color: #ff4893;
-}
-
 .light {
     font-weight: 300;
     font-style: italic;
@@ -72,32 +64,36 @@ strong {
 header {
     height: 40px;
     position: fixed;
-    left: 0;
+    left: 300px;
     right: 0;
     top: 0;
     padding: 10px 20px;
-    background: #ff4893;
-    color: #45454d;
+    background: #1e0411 ;
 }
 
 aside {
     position: fixed;
     left: 0;
-    top: 40px;
+    top: 0;
     bottom: 0;
     width: 300px;
     border-right: 1px #333 solid;
+    background: #951555;
     color: #333;
+    padding: 10px 20px !important;
 }
 main {
     position: fixed;
     left: 300px;
-    top: 50px;
+    top: 40px;
     right: 0;
     bottom: 0;
     padding: 20px;
     color: #333;
     scroll-behavior: smooth;
+    -webkit-box-shadow: inset 10px 5px 15px 1px rgba(30,4,17,0.3);
+    -moz-box-shadow: inset 10px 5px 15px 1px rgba(30,4,17,0.3);
+    box-shadow: inset 10px 5px 15px 1px rgba(30,4,17,0.3);
 }
 main>.nano>.nano-content {
     padding-right: 20px;
@@ -129,7 +125,6 @@ aside input {
 }
 
 input {
-    border-color: #ff4893;
     border-style: solid;
     border-width: 1px;
 }
@@ -140,12 +135,26 @@ header * {
 
 /** BACKGROUND **/
 
+.bg-primary {
+    background: #951555 !important;
+}
+
 .dark {
     color: #45454d !important;
 }
 
+.dark {
+    color: #fafafa;
+    transition: 0.3s ease-in-out;
+}
+
 .light {
     color: #fafafa;
+}
+
+.light:hover {
+    color: #45454d;
+    transition: 0.3s ease-in-out;
 }
 
 .text-right {
@@ -161,7 +170,7 @@ header * {
 }
 
 .bg-primary {
-    background: #ff4893;
+    background: #951555 ;
     color: #fafafa;
 }
 
@@ -180,32 +189,32 @@ header * {
 }
 
 .bg-light a {
-    color: #ff4893;
+    color: #951555;
 }
 
 .bg-dark a {
-    color: #ff4893;
+    color: #951555;
 }
 
 .btn-primary {
     background: #ffd5d5;
-    color: #ff4893;
-    border-color: #ff4893;
+    color: #951555;
+    border-color: #951555;
 }
 
 .btn-primary:hover {
-    background: #ff4893;
+    background: #951555;
     color: #fafafa;
     transition: 0.3s ease-in-out;
 }
 
 .btn-light {
     background: #fafafa;
-    color: #ff4893;
+    color: #951555;
 }
 
 .btn-light:hover {
-    background: #ff4893;
+    background: #951555;
     color: #fafafa;
     transition: 0.3s ease-in-out;
 }
