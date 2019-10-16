@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 
-/*Global fonts and color*/
 body {
     font-family: 'Lato', sans-serif;
     color: #333;
@@ -53,6 +52,14 @@ td {
     border: 1px #333 solid;
 }
 
+a {
+    color: #ff4893;
+}
+
+a:hover {
+    color: #ff4893;
+}
+
 .light {
     font-weight: 300;
     font-style: italic;
@@ -69,8 +76,8 @@ header {
     right: 0;
     top: 0;
     padding: 10px 20px;
-    background: #333;
-    color: #E6E6E6;
+    background: #ff4893;
+    color: #45454d;
 }
 
 aside {
@@ -120,6 +127,65 @@ aside input {
     width: 100%;
     padding: 5px;
 }
+
+input {
+    border-color: #ff4893;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** BACKGROUND **/
+
+.bg-primary {
+    background: #ff4893;
+    color: #fafafa;
+}
+
+.bg-light {
+    background: #fafafa;
+    color: #45454d;
+}
+
+.bg-dark {
+    background: #45454d;
+    color: #fafafa;
+}
+
+.bg-primary a {
+    color: #fafafa;
+}
+
+.bg-light a {
+    color: #ff4893;
+}
+
+.bg-dark a {
+    color: #ff4893;
+}
+
+.btn-primary {
+    background: #ffd5d5;
+    color: #ff4893;
+    border-color: #ff4893;
+}
+
+.btn-primary:hover {
+    background: #ff4893;
+    color: #fafafa;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-light {
+    background: #fafafa;
+    color: #ff4893;
+}
+
+.btn-light:hover {
+    background: #ff4893;
+    color: #fafafa;
+    transition: 0.3s ease-in-out;
+}
+
 #scrollToTop {
     display: block;
     position: fixed;
@@ -135,7 +201,7 @@ aside input {
 
 #scrollToTop.open {
     opacity: 1;
-    transition: 0.5s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 

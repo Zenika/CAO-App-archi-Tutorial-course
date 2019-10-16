@@ -12,7 +12,7 @@
 </header>
 @yield('content')
 
-<aside>
+<aside class="bg-dark">
     @include('includes.menu')
 </aside>
 
