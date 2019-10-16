@@ -23,4 +23,10 @@ public class WsClient {
     @PostMapping
     public void addClient(@Valid @RequestBody Client client){clientService.create(client);}
 
+    @DeleteMapping
+    public void deleteClient(@Valid @RequestBody Client client){clientService.delete(client);}
+
+    @PutMapping
+    public void updateClient(){}
+
 }
