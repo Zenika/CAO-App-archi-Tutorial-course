@@ -1,6 +1,7 @@
 package fr.space.adopteVaisseau.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -10,18 +11,24 @@ public class Location {
     @GeneratedValue
     private Long id;
 
+    @NotNull
     private Date startDate;
 
+    @NotNull
     private Date endDate;
 
+    @NotNull
     private boolean state;
 
+    @NotNull
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private Client client;
 
+    @NotNull
     @ManyToOne( cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private Ship ship;
 
+    @NotNull
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Formula formula;
 

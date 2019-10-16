@@ -1,6 +1,8 @@
 package fr.space.adopteVaisseau.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
@@ -11,10 +13,13 @@ public class Formula {
     @GeneratedValue
     private Long id;
 
+    @NotEmpty
     private String insurance;
 
+    @NotNull
     private Float price;
 
+    @NotNull
     private Date duration;
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
