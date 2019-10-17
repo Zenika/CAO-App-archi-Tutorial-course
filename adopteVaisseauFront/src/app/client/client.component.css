@@ -7,6 +7,7 @@ h2{
   float: right;
 }
 .container{
+  margin-top: 15px;
   width: 700px;
   background-color: #c1d4d608;
 }
@@ -15,4 +16,7 @@ h2{
   font-size: 1px;
   padding-top: 5px;
   display: inline-block;
+}
+td,th{
+  padding: 5px;
 }
