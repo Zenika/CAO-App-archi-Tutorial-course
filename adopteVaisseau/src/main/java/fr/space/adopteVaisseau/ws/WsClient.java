@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import fr.adopteVaisseau.shipControl.entity.Facturation;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -28,7 +29,6 @@ public class WsClient {
 
     @PostMapping("add-client")
     public void addClient(@Valid @RequestBody ClientDto client){
-
         logger.info("Client reçu {}",client.toString());
 
         clientService.create(new Client(client.getFirstName(),
