@@ -50,7 +50,7 @@ class User implements UserInterface
     private $firstname;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Annonce", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="App\Entity\Annonce", mappedBy="user", cascade={"remove"})
      */
     private $annonces;
 
@@ -114,12 +114,12 @@ class User implements UserInterface
     /**
      * @see UserInterface
      */
-    public function getPassword(): string
+    public function getPassword(): ?string
     {
         return (string) $this->password;
     }
 
-    public function setPassword(string $password): self
+    public function setPassword(?string $password): self
     {
         $this->password = $password;
 

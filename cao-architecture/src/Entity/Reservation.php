@@ -3,8 +3,10 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="App\Repository\ReservationRepository")
  */
 class Reservation
@@ -22,7 +24,7 @@ class Reservation
     private $date;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Annonce", inversedBy="reservation", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\Annonce", inversedBy="reservation")
      * @ORM\JoinColumn(nullable=false)
      */
     private $annonce;
