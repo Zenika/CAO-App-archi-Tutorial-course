@@ -17,7 +17,7 @@ public class AdopteVaisseauApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		Client client = new Client("Jean","Dupont","12 rue des tests","0202020202",true);
+		/*Client client = new Client("Jean","Dupont","12 rue des tests","0202020202",true);
 		Client client2 = new Client("Paul","Dupont","12 rue des tests","0202020202",true);
 		Client client3 = new Client("Pierre","Dupont","12 rue des tests","0202020202",true);
 
@@ -30,7 +30,7 @@ public class AdopteVaisseauApplicationTests {
 		System.out.println("Suppression");
 
 		clientService.delete(client);
-
+*/
 		clientService.findAll().forEach(System.out::println);
 	}
 

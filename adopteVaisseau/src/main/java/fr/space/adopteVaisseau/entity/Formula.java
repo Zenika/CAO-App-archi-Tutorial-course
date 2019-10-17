@@ -23,7 +23,7 @@ public class Formula {
     private Date duration;
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private List<Location> locations;
+    private List<Leasing> leasings;
 
     public Formula() {
     }

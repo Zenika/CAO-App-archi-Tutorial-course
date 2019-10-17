@@ -1,6 +1,6 @@
 package fr.space.adopteVaisseau.dto;
 
-import fr.space.adopteVaisseau.entity.Location;
+import fr.space.adopteVaisseau.entity.Leasing;
 
 import java.util.Date;
 import java.util.List;
@@ -13,16 +13,16 @@ public class FormulaDto {
 
     private Date duration;
 
-    private List<Location> locations;
+    private List<Leasing> leasings;
 
     public FormulaDto() {
     }
 
-    public FormulaDto(String insurance, float price, Date duration, List<Location> locations) {
+    public FormulaDto(String insurance, float price, Date duration, List<Leasing> leasings) {
         this.insurance = insurance;
         this.price = price;
         this.duration = duration;
-        this.locations = locations;
+        this.leasings = leasings;
     }
 
     public String getInsurance() {
@@ -49,12 +49,12 @@ public class FormulaDto {
         this.duration = duration;
     }
 
-    public List<Location> getLocations() {
-        return locations;
+    public List<Leasing> getLeasings() {
+        return leasings;
     }
 
-    public void setLocations(List<Location> locations) {
-        this.locations = locations;
+    public void setLeasings(List<Leasing> leasings) {
+        this.leasings = leasings;
     }
 
     @Override
@@ -63,7 +63,7 @@ public class FormulaDto {
         sb.append("insurance='").append(insurance).append('\'');
         sb.append(", price=").append(price);
         sb.append(", duration=").append(duration);
-        sb.append(", locations=").append(locations);
+        sb.append(", leasings=").append(leasings);
         sb.append('}');
         return sb.toString();
     }

@@ -3,7 +3,6 @@ package fr.space.adopteVaisseau.entity;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -24,7 +23,7 @@ public class Ship {
     private Stock stock;
 
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    private List<Location> locations;
+    private List<Leasing> leasings;
 
     public Ship() {
     }

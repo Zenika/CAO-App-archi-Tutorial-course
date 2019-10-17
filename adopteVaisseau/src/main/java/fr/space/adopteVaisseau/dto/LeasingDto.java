@@ -6,7 +6,7 @@ import fr.space.adopteVaisseau.entity.Ship;
 
 import java.util.Date;
 
-public class LocationDto {
+public class LeasingDto {
 
     private Date startDate;
 
@@ -20,10 +20,10 @@ public class LocationDto {
 
     private Formula formula;
 
-    public LocationDto() {
+    public LeasingDto() {
     }
 
-    public LocationDto(Date startDate, Date endDate, boolean state, Client client, Ship ship, Formula formula) {
+    public LeasingDto(Date startDate, Date endDate, boolean state, Client client, Ship ship, Formula formula) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.state = state;
@@ -82,7 +82,7 @@ public class LocationDto {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("LocationDto{");
+        final StringBuilder sb = new StringBuilder("LeasingDto{");
         sb.append("startDate=").append(startDate);
         sb.append(", endDate=").append(endDate);
         sb.append(", state=").append(state);
