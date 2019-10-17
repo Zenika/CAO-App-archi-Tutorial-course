@@ -11,7 +11,7 @@ import java.util.List;
 public class Client {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
     @NotEmpty(message = "Provide a first name please")
@@ -22,20 +22,18 @@ public class Client {
     @Size(max = 50)
     private String lastName;
 
-    @NotEmpty(message = "Provide adress plese")
     private String adress;
 
     @NotEmpty(message = "Provide a phone number please")
     @Size(max = 10)
     private String tel;
 
-    @NotNull
+
     private boolean isPermissionPilot;
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Location> Location;
 
-    @NotEmpty
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Employee employees;
 
