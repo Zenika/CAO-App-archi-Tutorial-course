@@ -53,7 +53,7 @@ CREATE TABLE `product` (
   `product_id` int(11) NOT NULL,
   `name_product` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `price` int(11) NOT NULL,
-  `is rented` int(11) NOT NULL DEFAULT '0'
+  `is_rented` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------

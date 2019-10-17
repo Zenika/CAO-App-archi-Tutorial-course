@@ -1,4 +1,4 @@
-package cao.application.architecture.unicornrenting.service.;
+package cao.application.architecture.unicornrenting.service;
 
 import java.util.List;
 
@@ -33,14 +33,11 @@ public class BusinessService {
 		sessionFactory.close();
 	}
 
-	protected void createProduct(String name, int price) {
+	protected void createProduct(String name, int price, boolean isRented) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 
-		Product licorne = new Product();
-		licorne.setNameProduct(name);
-		licorne.setPrice(price);
-		licorne.setRented(false);
+		Product licorne = new Product("Sparky", 150, true);
 
 		session.save(licorne);
 
@@ -52,7 +49,7 @@ public class BusinessService {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 
-		TypedQuery<Product> query = session.createNamedQuery("SELECT p FROM Product p WHERE p.isRented = false",
+		TypedQuery<Product> query = session.createNamedQuery("SELECT * FROM Product p WHERE p.is_rented = 1",
 				Product.class);
 		List<Product> results = query.getResultList();
 		session.getTransaction().commit();

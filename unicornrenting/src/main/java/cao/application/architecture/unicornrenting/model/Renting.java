@@ -13,11 +13,9 @@ public class Renting {
     public Date startDate;
     public Date endDate;
 
-    @OneToMany
     @JoinColumn(name = "customer_id", table = "customer")
     public int customerId;
 
-    @OneToOne
     @JoinColumn(name = "product_id", table = "product")
     public int productId;
 
