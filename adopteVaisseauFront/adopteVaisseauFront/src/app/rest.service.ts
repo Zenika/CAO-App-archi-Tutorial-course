@@ -6,7 +6,8 @@ import { map, catchError, tap } from 'rxjs/operators';
 const endpoint = 'http://localhost:8080/api/';
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json'
+    'content-type':  'application/json',
+    'Access-Control-Allow-Credentials': 'true'
   })
 };
 
@@ -17,12 +18,22 @@ export class RestService {
 
   constructor(private http: HttpClient) {}
 
+  private extractData(res: Response) {
+    let body = res;
+    return body || { };
+  }
+  
   addClient(client): Observable<any> {
     console.log(client);
-    return this.http.post<any>(endpoint + '/add-client', JSON.stringify(client), httpOptions).pipe(
+    return this.http.post<any>(endpoint + 'add-client', client, httpOptions).pipe(
       tap((product) => console.log(`added client w/ id=${product.id}`)),
       catchError(this.handleError<any>('addProduct'))
     );
+  }
+
+  getClients(): Observable<any> {
+    return this.http.get(endpoint + 'client').pipe(
+      map(this.extractData));
   }
 
   private handleError<T> (operation = 'operation', result?: T) {

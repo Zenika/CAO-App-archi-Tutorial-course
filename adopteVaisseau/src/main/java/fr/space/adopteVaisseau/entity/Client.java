@@ -29,13 +29,12 @@ public class Client {
     @Size(max = 10)
     private String tel;
 
-    @NotNull
+
     private boolean isPermissionPilot;
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Location> Location;
 
-    @NotEmpty
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Employee employees;
 

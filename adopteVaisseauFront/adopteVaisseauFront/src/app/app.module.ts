@@ -12,11 +12,11 @@ const appRoutes: Routes = [
   {
     path: 'client',
     component: ClientComponent,
-    data: { title: 'Clients list' }
+    data: { title: 'Client' }
   },
   { path: '',
     redirectTo: '/client',
-    pathMatch: 'Client list'
+    pathMatch: 'full'
   }
 ];
 @NgModule({
