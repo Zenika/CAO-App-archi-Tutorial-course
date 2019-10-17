@@ -5,7 +5,9 @@ import cao.application.architecture.unicornrenting.repository.CustomerRepository
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import cao.application.architecture.unicornrenting.model.CustomerDTO;
 
+import javax.validation.Valid;
 import java.util.Map;
 
 @RestController
@@ -20,28 +22,25 @@ public class CustomerResource {
         return ResponseEntity.ok(customerRepository.findAll());
     }
 
-    @PostMapping("clients/ajout")
-    public Customer setClients(@RequestBody Map<String, String> body) {
-        String lastName = body.get("lastName");
-        String firstName = body.get("firstName");
-        String email = body.get("email");
-        String phoneNumber = body.get("phoneNumber");
-        String address = body.get("address");
-        String postalCode = body.get("postalCode");
-        String city = body.get("city");
-        String country = body.get("country");
 
-        return customerRepository.save(new Customer(
-                lastName,
-                firstName,
-                email,
-                phoneNumber,
-                address,
-                postalCode,
-                city,
-                country,
-                false,
-                2
-                ));
+        @PostMapping("clients")
+        public ResponseEntity createClient(@Valid @RequestBody CustomerDTO customerDTO) {
+            if (customerDTO != null) {
+                Customer result = customerRepository.save(new Customer(
+                        customerDTO.firstName,
+                        customerDTO.lastName,
+                        customerDTO.email,
+                        customerDTO.phoneNumber,
+                        customerDTO.address,
+                        customerDTO.postalCode,
+                        customerDTO.city,
+                        customerDTO.country,
+                        customerDTO.paymentValidated,
+                        customerDTO.staffId
+                        ));
+                return ResponseEntity.ok(result);
+            }
+            return ResponseEntity.badRequest().build();
+        }
     }
-}
+
