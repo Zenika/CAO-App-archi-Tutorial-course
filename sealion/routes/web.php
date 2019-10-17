@@ -12,3 +12,5 @@
 */
 
 Route::get('/', "AppController@index");
+
+Route::get('/test', "SealionController@getSealions");

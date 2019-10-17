@@ -4,18 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Sealion;
+use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class SealionController extends Controller
 {
-    public function getSealions() 
+    public function getSealions()
     {
-        $sealLions = Sealion::all();
-
+        $sealLionsOld = Sealion::all();
+        $currentDate =  date("Y-m-d H:i:s");
+        var_dump($currentDate);
+        $rents = DB::table("rents")->select("sealion_id", "end_date")->where("end_date", "<", $currentDate)->get();
+        var_dump($rents);
+        foreach ($rents as $rent) {
+            var_dump($rent);//, $sealLions);
+        }
+//        $sealLions = DB::table("sealions")
+//            ->where([""]);
+        die;
         return response()->json($sealLions);
     }
 
-    public function getSealion($id) 
+    public function getSealion($id)
     {
         $sealLions = Sealion::findOrFail($id);
 
