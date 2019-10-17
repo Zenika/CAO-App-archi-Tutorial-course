@@ -12,8 +12,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:4200")
-public class WSControl {
+//@CrossOrigin(origins = "http://localhost:4200")
+public class WsControl {
 
     @Autowired
     private ControlService controlService;
@@ -24,7 +24,7 @@ public class WSControl {
     }
 
     @PostMapping("add-control")
-    public void addControl(@Valid @RequestBody ControlDto control){
+    public void addControl(@RequestBody ControlDto control){
         controlService.create(new Control(control.isMoteur(),control.isBouclier(),
                 control.isStructure(),control.isTrainAtterisage(),control.isArmement()));
     }
@@ -32,7 +32,7 @@ public class WSControl {
     @DeleteMapping("delete-control")
     public void deleteControl(@Valid @RequestBody Control control){controlService.delete(control);}
 
-    @PutMapping("update-client")
-    public void updateClient(@Valid @RequestBody Control control){
+    @PutMapping("update-control")
+    public void updateControl(@Valid @RequestBody Control control){
         controlService.create(control);}
 }

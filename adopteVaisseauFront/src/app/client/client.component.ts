@@ -23,6 +23,7 @@ export class ClientComponent implements OnInit {
     this.rest.addClient(this.client).subscribe((result) => {
       console.log(result);
       this.clients.push(this.client);
+      this.client = { lastName: '', firstName: '', tel: '', mail: '',isPermissionPilot: false };
     }, (err) => {
       console.log(err);
     });
