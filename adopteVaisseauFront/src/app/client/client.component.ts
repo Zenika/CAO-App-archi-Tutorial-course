@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ClientComponent implements OnInit {
 
-  @Input() client = { lastName: '', firstName: '', tel: '', mail: '' };
+  @Input() client = { lastName: '', firstName: '', tel: '', mail: '',isPermissionPilot: false };
 
   clients: any = [];
 
@@ -22,6 +22,7 @@ export class ClientComponent implements OnInit {
   addClient() {
     this.rest.addClient(this.client).subscribe((result) => {
       console.log(result);
+      this.clients.push(this.client);
     }, (err) => {
       console.log(err);
     });

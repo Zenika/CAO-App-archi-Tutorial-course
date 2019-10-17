@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController()
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:4200")
 public class WsClient {
 
     private Logger logger = LoggerFactory.getLogger(WsClient.class);
@@ -31,7 +32,7 @@ public class WsClient {
         logger.info("Client reçu {}",client.toString());
 
         clientService.create(new Client(client.getFirstName(),
-                client.getLastName(),client.getAdress(),client.getTel(),client.isPermissionPilot()));
+                client.getLastName(),client.getMail(),client.getAdress(),client.getTel(),client.isPermissionPilot()));
     }
 
     @DeleteMapping("deleteClient")

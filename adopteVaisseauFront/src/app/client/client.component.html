@@ -1,22 +1,65 @@
-<div>
+<div class="container">
   <h2>Client</h2>
-  <div>
-    <label>LastName:
-      <input [(ngModel)]="client.lastName" placeholder="LastName"/>
-    </label><br>
-    <label>FirstName:
-      <input [(ngModel)]="client.firstName" placeholder="FirstName"/>
-    </label><br>
-    <label>Mail:
-      <input [(ngModel)]="client.mail" placeholder="Mail"/>
-    </label><br>
-    <label>Tel:
-      <input [(ngModel)]="client.tel" placeholder="Tel"/>
-    </label><br>
+  <div class="row">
+
+
+      <div class="col-sm-6">
+        <label for="inputNom">Nom</label>
+        <input [(ngModel)]="client.lastName" id="inputNom" class="form-control" placeholder="Nom">
+      </div>
+
+      <div class="col-sm-6">
+        <label for="inputPrenom">Prénom</label>
+        <input [(ngModel)]="client.firstName" id="inputPrenom" class="form-control" placeholder="Prénom">
+      </div>
+
+
+      <div class="col-sm-6">
+        <label for="inputMail">Mail</label>
+        <input [(ngModel)]="client.mail" id="inputMail" class="form-control" placeholder="Mail">
+      </div>
+
+      <div class="col-sm-6">
+        <label for="inputTel">Tel</label>
+        <input [(ngModel)]="client.tel" id="inputTel" class="form-control" placeholder="Tel">
+      </div>
+
+
+      <div class="col-sm-12">
+        <label for="inputAdress">Adress</label>
+        <input [(ngModel)]="client.Adress" id="inputAdress" class="form-control" placeholder="Adresse">
+      </div>
+
+      <div class="col-sm-12">
+        <label for="inputPermissionPilot">Permis pilote</label>
+        <input type="checkbox" [checked]="client.isPermissionPilot" id="inputPermissionPilot" class="permissionPilot form-control">
+      </div>
+
+    <div class="col-sm-12">
+      <button class=" col-sm-2 btn btn-primary" (click)="addClient()">Enregistrer</button>
+    </div>
+
   </div>
-  <button (click)="addClient()">Enregistrer</button>
+
+  <div class="row">
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Mail</th>
+          <th>Tel</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{client.lastName}}</td>
+        <td>{{client.firstName}}</td>
+        <td>{{client.mail}}</td>
+        <td>{{client.tel}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
-<div>
-  <p ></p>
-</div>

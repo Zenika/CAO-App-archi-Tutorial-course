@@ -1,0 +1,18 @@
+h2{
+  font-size: 20px;
+  text-align: center;
+}
+.btn{
+  margin-top: 15px;
+  float: right;
+}
+.container{
+  width: 700px;
+  background-color: #c1d4d608;
+}
+.permissionPilot{
+  width: 50px;
+  font-size: 1px;
+  padding-top: 5px;
+  display: inline-block;
+}

@@ -26,7 +26,7 @@ export class RestService {
   addClient(client): Observable<any> {
     console.log(client);
     return this.http.post<any>(endpoint + 'add-client', client, httpOptions).pipe(
-      tap((product) => console.log(`added client w/ id=${product.id}`)),
+      tap((product) => console.log(`added client`)),
       catchError(this.handleError<any>('addProduct'))
     );
   }

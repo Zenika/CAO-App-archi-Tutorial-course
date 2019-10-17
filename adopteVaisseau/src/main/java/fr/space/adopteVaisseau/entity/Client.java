@@ -22,6 +22,8 @@ public class Client {
     @Size(max = 50)
     private String lastName;
 
+    private String mail;
+
     private String adress;
 
     @NotEmpty(message = "Provide a phone number please")
@@ -40,9 +42,10 @@ public class Client {
     public Client() {
     }
 
-    public Client(String firstName, String lastName, String adress, String tel, boolean isPermissionPilot) {
+    public Client(@NotEmpty(message = "Provide a first name please") @Size(max = 50) String firstName, @NotEmpty(message = "Provide a last name please") @Size(max = 50) String lastName, String mail, String adress, @NotEmpty(message = "Provide a phone number please") @Size(max = 10) String tel, boolean isPermissionPilot) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.mail = mail;
         this.adress = adress;
         this.tel = tel;
         this.isPermissionPilot = isPermissionPilot;
@@ -70,6 +73,14 @@ public class Client {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
     public String getAdress() {
