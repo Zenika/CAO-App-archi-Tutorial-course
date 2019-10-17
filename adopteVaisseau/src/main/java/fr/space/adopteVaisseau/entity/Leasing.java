@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
-public class Location {
+public class Leasing {
 
     @Id
     @GeneratedValue
@@ -32,10 +32,10 @@ public class Location {
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Formula formula;
 
-    public Location() {
+    public Leasing() {
     }
 
-    public Location(Date startDate, Date endDate, boolean state) {
+    public Leasing(Date startDate, Date endDate, boolean state) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.state = state;
@@ -75,7 +75,7 @@ public class Location {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Location{");
+        final StringBuilder sb = new StringBuilder("Leasing{");
         sb.append("id=").append(id);
         sb.append(", startDate=").append(startDate);
         sb.append(", endDate=").append(endDate);

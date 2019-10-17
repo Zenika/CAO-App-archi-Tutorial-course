@@ -1,6 +1,6 @@
 package fr.space.adopteVaisseau.dto;
 
-import fr.space.adopteVaisseau.entity.Location;
+import fr.space.adopteVaisseau.entity.Leasing;
 import fr.space.adopteVaisseau.entity.Stock;
 
 import java.util.List;
@@ -13,16 +13,16 @@ public class ShipDto {
 
     private Stock stock;
 
-    private List<Location> locations;
+    private List<Leasing> leasings;
 
     public ShipDto() {
     }
 
-    public ShipDto(boolean isAvailable, String description, Stock stock, List<Location> locations) {
+    public ShipDto(boolean isAvailable, String description, Stock stock, List<Leasing> leasings) {
         this.isAvailable = isAvailable;
         this.description = description;
         this.stock = stock;
-        this.locations = locations;
+        this.leasings = leasings;
     }
 
     public boolean isAvailable() {
@@ -49,12 +49,12 @@ public class ShipDto {
         this.stock = stock;
     }
 
-    public List<Location> getLocations() {
-        return locations;
+    public List<Leasing> getLeasings() {
+        return leasings;
     }
 
-    public void setLocations(List<Location> locations) {
-        this.locations = locations;
+    public void setLeasings(List<Leasing> leasings) {
+        this.leasings = leasings;
     }
 
     @Override
@@ -63,7 +63,7 @@ public class ShipDto {
         sb.append("isAvailable=").append(isAvailable);
         sb.append(", description='").append(description).append('\'');
         sb.append(", stock=").append(stock);
-        sb.append(", locations=").append(locations);
+        sb.append(", leasings=").append(leasings);
         sb.append('}');
         return sb.toString();
     }

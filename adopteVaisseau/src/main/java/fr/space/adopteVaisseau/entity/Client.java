@@ -3,7 +3,6 @@ package fr.space.adopteVaisseau.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
 
@@ -34,7 +33,7 @@ public class Client {
     private boolean isPermissionPilot;
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private List<Location> Location;
+    private List<Leasing> Leasing;
 
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Employee employees;
