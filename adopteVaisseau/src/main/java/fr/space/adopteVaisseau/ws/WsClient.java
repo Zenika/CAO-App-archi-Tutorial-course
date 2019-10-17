@@ -35,4 +35,11 @@ public class WsClient {
                 client.getLastName(),client.getAdress(),client.getTel(),client.isPermissionPilot()));
     }
 
+    @DeleteMapping("deleteClient")
+    public void deleteClient(@Valid @RequestBody Client client){clientService.delete(client);}
+
+    @PutMapping("update-client")
+    public void updateClient(@Valid @RequestBody Client client){
+        clientService.create(client);}
+
 }
