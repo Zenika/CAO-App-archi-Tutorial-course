@@ -22,6 +22,9 @@ public class Customer {
     @JoinColumn(name= "staff_id", table = "staff")
     public int staffId;
 
+    public Customer () {
+
+    }
     public Customer(String lastName, String firstName, String email, String phoneNumber, String address,
                     String postalCode, String city, String country, Boolean paymentValidated) {
         this.lastName = lastName;
