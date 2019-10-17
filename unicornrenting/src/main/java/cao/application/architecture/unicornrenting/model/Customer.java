@@ -19,6 +19,7 @@ public class Customer {
     public String country;
     public Boolean paymentValidated;
 
+
     @JoinColumn(name= "staff_id", table = "staff")
     public int staffId;
 
@@ -26,7 +27,7 @@ public class Customer {
 
     }
     public Customer(String lastName, String firstName, String email, String phoneNumber, String address,
-                    String postalCode, String city, String country, Boolean paymentValidated) {
+                    String postalCode, String city, String country, Boolean paymentValidated, int staffId) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.email = email;
@@ -36,6 +37,7 @@ public class Customer {
         this.city = city;
         this.country = country;
         this.paymentValidated = paymentValidated;
+        this.staffId = staffId;
     }
 
     @Override
