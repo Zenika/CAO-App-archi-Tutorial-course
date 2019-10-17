@@ -9,6 +9,7 @@ import cao.application.architecture.unicornrenting.model.CustomerDTO;
 
 import javax.validation.Valid;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -41,6 +42,17 @@ public class CustomerResource {
                 return ResponseEntity.ok(result);
             }
             return ResponseEntity.badRequest().build();
+        }
+
+    @DeleteMapping("clients/{id}")
+    public ResponseEntity deleteClient(@PathVariable Long id){
+        Optional<Customer> maybeCustomer= customerRepository.findById(id);
+        if(maybeCustomer.isPresent()){
+            customerRepository.deleteById(id);
+            return ResponseEntity.ok().build();
+        }else{
+            return ResponseEntity.badRequest().build();
+            }
         }
     }
 

@@ -8,7 +8,7 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    public int customerId;
+    public Long customerId;
     public String lastName;
     public String firstName;
     public String email;
@@ -82,11 +82,11 @@ public class Customer {
 
 
     //getter/setter
-    public int getCustomerId() {
+    public Long getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Long customerId) {
         this.customerId = customerId;
     }
 
