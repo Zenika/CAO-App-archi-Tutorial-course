@@ -8,8 +8,9 @@
     </head>
     <body>
         {% if app.user %}
-            <a href="{{ path('annonces') }}">Vos annonces</a>
-            <a href="{{ path('annonce_create') }}">Ajouter une annonce</a>
+            <a href="{{ path('annonces') }}">Annonces</a>
+            <a href="{{ path('type_vehicule_index') }}">Types de véhicule</a>
+            <a href="{{ path('reservation_index') }}">Réservations</a>
             <a href="{{ path('app_logout') }}">Se déconnecter</a>
         {% else %}
             <a href="{{ path('app_login') }}">Se connecter</a>

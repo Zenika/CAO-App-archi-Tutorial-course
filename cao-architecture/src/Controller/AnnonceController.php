@@ -4,20 +4,24 @@ namespace App\Controller;
 
 use App\Entity\Annonce;
 use App\Form\AnnonceFormType;
+use App\Repository\AnnonceRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/annonces")
+ */
 class AnnonceController extends AbstractController
 {
     /**
-     * @Route("/annonce/create", name="annonce_create")
+     * @Route("/create", name="annonce_create")
      */
     public function create(Request $request)
     {
 
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+//        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         $annonce = new Annonce();
         $form = $this->createForm(AnnonceFormType::class, $annonce);
@@ -26,7 +30,6 @@ class AnnonceController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $date = new \DateTime();
             $annonce->setDate($date);
-            $annonce->setIsRented(0);
             $annonce->setUser($this->getUser());
 
             $entityManager = $this->getDoctrine()->getManager();
@@ -42,20 +45,18 @@ class AnnonceController extends AbstractController
     }
 
     /**
-     * @Route("/annonce/{id}/edit", name="annonce_edit")
+     * @Route("/{id}/edit", name="annonce_edit")
      */
     public function edit(Annonce $annonce, Request $request)
     {
 
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+//        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         $form = $this->createForm(AnnonceFormType::class, $annonce);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($annonce);
-            $entityManager->flush();
+            $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('annonces');
         }
@@ -66,18 +67,13 @@ class AnnonceController extends AbstractController
     }
 
     /**
-     * @Route("/annonces", name="annonces")
+     * @Route("/", name="annonces")
      */
-    public function getAnnonces()
+    public function getAnnonces(AnnonceRepository $repository)
     {
 
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-
-        $annonces = $this->getDoctrine()
-            ->getRepository(Annonce::class)
-            ->findBy([
-               'user' =>  $this->getUser()
-            ]);
+//        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $annonces = $repository->findAll();
 
         return $this->render('annonce/annonces.html.twig', [
             'annonces' => $annonces
@@ -85,17 +81,13 @@ class AnnonceController extends AbstractController
     }
 
     /**
-     * @Route("/annonce/{id}/delete", name="annonce_delete")
+     * @Route("/{id}/delete", name="annonce_delete")
      */
-    public function deleteAnnonce($id)
+    public function deleteAnnonce(Annonce $annonce)
     {
 
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+//        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $manager = $this->getDoctrine()->getManager();
-
-        $annonce = $this->getDoctrine()
-            ->getRepository(Annonce::class)
-            ->find($id);
         $manager->remove($annonce);
         $manager->flush();
 

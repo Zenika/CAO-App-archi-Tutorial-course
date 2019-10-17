@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Vos annonces</h1>
+    <h1>Annonces</h1>
+    <a href="{{ path('annonce_create') }}">Ajouter une annonce</a>
     <div class="annonces_listing">
         <ul>
             {% for annonce in annonces %}
@@ -10,9 +11,8 @@
                     <p>{{ annonce.description }}</p>
                     <p>Prix : {{ annonce.price }} €</p>
                     <p>Type du véhicule : {{ annonce.typeVehicule }}</p>
-                    <p>{{ annonce.isRented ? 'Loué' : 'Non loué'}}</p>
-                    <a href="{{ path('annonce_edit', {'id': annonce.id}) }}">Modifier l'annonce</a>
-                    <a href="{{ path('annonce_delete', {'id': annonce.id}) }}">Supprimer l'annonce</a>
+                    <a href="{{ path('annonce_edit', {'id': annonce.id}) }}">Modifier</a>
+                    <a href="{{ path('annonce_delete', {'id': annonce.id}) }}">Supprimer</a>
                 </li>
             {% endfor %}
         </ul>

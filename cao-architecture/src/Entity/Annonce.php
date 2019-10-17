@@ -39,13 +39,8 @@ class Annonce
     private $price;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    private $isRented;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\TypeVehicule", inversedBy="annonces")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(onDelete="SET NULL")
      */
     private $typeVehicule;
 
@@ -54,6 +49,11 @@ class Annonce
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Reservation", mappedBy="annonce", cascade={"persist", "remove"})
+     */
+    private $reservation;
 
     public function getId(): ?int
     {
@@ -108,18 +108,6 @@ class Annonce
         return $this;
     }
 
-    public function getIsRented(): ?bool
-    {
-        return $this->isRented;
-    }
-
-    public function setIsRented(bool $isRented): self
-    {
-        $this->isRented = $isRented;
-
-        return $this;
-    }
-
     public function getTypeVehicule(): ?TypeVehicule
     {
         return $this->typeVehicule;
@@ -143,4 +131,28 @@ class Annonce
 
         return $this;
     }
+
+    public function getReservation(): ?Reservation
+    {
+        return $this->reservation;
+    }
+
+    public function setReservation(Reservation $reservation): self
+    {
+        $this->reservation = $reservation;
+
+        // set the owning side of the relation if necessary
+        if ($this !== $reservation->getAnnonce()) {
+            $reservation->setAnnonce($this);
+        }
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->title;
+    }
+
+
 }
