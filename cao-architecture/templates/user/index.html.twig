@@ -3,16 +3,19 @@
 {% block title %}User index{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
-    <a href="{{ path('user_create') }}">Créer un utilisateur</a>
+    <h1>Tous les utilisateurs</h1>
+    <a href="{{ path('user_create') }}" class="listing_create_link">Créer un utilisateur</a>
 
-    {% for user in users %}
+    <div class="listing">
         <ul>
-            <li>
-                <h2>{{ user.email }}</h2>
-                <a href="{{ path('user_edit', {'id': user.id}) }}">Modifier</a>
-                <a href="{{ path('user_delete', {'id': user.id}) }}">Supprimer</a>
-            </li>
+            {% for user in users %}
+                    <li>
+                        <h2>{{ user.email }}</h2>
+                        <a href="{{ path('user_edit', {'id': user.id}) }}">Modifier</a>
+                        <a href="{{ path('user_delete', {'id': user.id}) }}">Supprimer</a>
+                    </li>
+            {% endfor %}
         </ul>
-    {% endfor %}
+    </div>
+
 {% endblock %}

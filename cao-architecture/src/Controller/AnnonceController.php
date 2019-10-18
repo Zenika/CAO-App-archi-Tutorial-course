@@ -3,15 +3,18 @@
 namespace App\Controller;
 
 use App\Entity\Annonce;
+use App\Entity\Reservation;
 use App\Form\AnnonceFormType;
 use App\Repository\AnnonceRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/annonces")
+ * @IsGranted("ROLE_USER")
  */
 class AnnonceController extends AbstractController
 {
@@ -73,7 +76,13 @@ class AnnonceController extends AbstractController
     {
 
 //        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-        $annonces = $repository->findAll();
+        $annonces = $repository->findBy([
+            'user' => $this->getUser()
+        ]);
+        if($this->isGranted('ROLE_ADMIN')) {
+            $annonces = $repository->findAll();
+        }
+
 
         return $this->render('annonce/annonces.html.twig', [
             'annonces' => $annonces
@@ -90,6 +99,25 @@ class AnnonceController extends AbstractController
         $manager = $this->getDoctrine()->getManager();
         $manager->remove($annonce);
         $manager->flush();
+
+        return $this->redirectToRoute('annonces');
+    }
+
+    /**
+     * @Route("/{id}/rent", name="annonce_rent")
+     */
+    public function rent(Request $request, Annonce $annonce)
+    {
+        $manager = $this->getDoctrine()->getManager();
+
+        if(!$annonce->getReservation()) {
+            $reservation = new Reservation();
+            $reservation->setDate(new \DateTime());
+            $reservation->setAnnonce($annonce);
+            $reservation->setUser($this->getUser());
+            $manager->persist($reservation);
+            $manager->flush();
+        }
 
         return $this->redirectToRoute('annonces');
     }

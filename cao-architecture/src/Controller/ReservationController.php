@@ -30,7 +30,7 @@ class ReservationController extends AbstractController
     /**
      * @Route("/create", name="reservation_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function create(Request $request): Response
     {
         $reservation = new Reservation();
         $form = $this->createForm(ReservationType::class, $reservation);

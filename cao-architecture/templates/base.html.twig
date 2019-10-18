@@ -3,20 +3,29 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link href="{{ asset('build/app.css') }}" rel="stylesheet" />
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </head>
     <body>
-        {% if app.user %}
-            <a href="{{ path('annonces') }}">Annonces</a>
-            <a href="{{ path('type_vehicule_index') }}">Types de véhicule</a>
-            <a href="{{ path('reservation_index') }}">Réservations</a>
-            <a href="{{ path('user_index') }}">Utilisateurs</a>
-            <a href="{{ path('app_logout') }}">Se déconnecter</a>
-        {% else %}
-            <a href="{{ path('app_login') }}">Se connecter</a>
-            <a href="{{ path('app_register') }}">Créer un compte</a>
-        {% endif %}
-        {% block body %}{% endblock %}
+        <div class="nav">
+            {% if is_granted("ROLE_USER") %}
+                <a href="{{ path('annonces') }}">Annonces</a>
+                {% if is_granted("ROLE_ADMIN") %}
+                    <a href="{{ path('type_vehicule_index') }}">Types de véhicule</a>
+                    <a href="{{ path('reservation_index') }}">Réservations</a>
+                    <a href="{{ path('user_index') }}">Utilisateurs</a>
+                {% endif %}
+                <a href="{{ path('app_logout') }}">Se déconnecter</a>
+            {% else %}
+                <a href="{{ path('app_login') }}">Se connecter</a>
+                <a href="{{ path('app_register') }}">Créer un compte</a>
+            {% endif %}
+        </div>
+        <div class="content">
+            {% block body %}{% endblock %}
+        </div>
+
     </body>
 </html>

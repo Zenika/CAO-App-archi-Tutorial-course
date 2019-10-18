@@ -10,6 +10,6 @@
         {{ form_row(form.firstname) }}
         {{ form_row(form.email) }}
         {{ form_row(form.roles) }}
-        <input type="submit" value="Modifier">
-    {{ form_end(form) }}
+{#        <input type="submit" value="Modifier">#}
+    {{ form_end(form, {'render_rest': false}) }}
 {% endblock %}

@@ -4,18 +4,20 @@
 
 {% block body %}
     <h1>Types de véhicules</h1>
-    <a href="{{ path('type_vehicule_new') }}">Créer un nouveau type</a>
+    <a href="{{ path('type_vehicule_new') }}" class="listing_create_link">Créer un nouveau type</a>
 
-    {% for type_vehicule in type_vehicules %}
+    <div class="listing">
         <ul>
+        {% for type_vehicule in type_vehicules %}
             <li>
                 <h2>{{ type_vehicule.title }}</h2>
                 <a href="{{ path('type_vehicule_edit', {'id': type_vehicule.id}) }}">Modifier</a>
                 <a href="{{ path('type_vehicule_delete', {'id': type_vehicule.id}) }}">Supprimer</a>
             </li>
+        {% else %}
+            <p>Aucun type de véhicule</p>
+        {% endfor %}
         </ul>
-    {% else %}
-        <p>Aucun type de véhicule</p>
-    {% endfor %}
+    </div>
 
 {% endblock %}

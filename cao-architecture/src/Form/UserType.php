@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\User;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -30,6 +31,8 @@ class UserType extends AbstractType
                 'choices' => [
                     'Administrateur' => 'ROLE_ADMIN'
                 ],
+            ])->add('submit', SubmitType::class, [
+                'label' => 'Créer'
             ]);
     }
 

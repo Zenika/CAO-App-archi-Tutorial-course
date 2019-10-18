@@ -16,6 +16,9 @@ class TypeVehiculeType extends AbstractType
         $builder
             ->add('title', TextType::class, [
                 'label' => 'Titre'
+            ])
+            ->add('submit', SubmitType::class, [
+                'label' => 'Créer'
             ]);
     }
 

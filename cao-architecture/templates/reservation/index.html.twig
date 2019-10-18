@@ -4,18 +4,20 @@
 
 {% block body %}
     <h1>Réservations</h1>
-    <a href="{{ path('reservation_new') }}">Créer une nouvelle réservation</a>
+    <a href="{{ path('reservation_new') }}" class="listing_create_link">Créer une nouvelle réservation</a>
 
-    {% for reservation in reservations %}
-        <ul>
-            <li>
-                <h2>Réservation n°{{ reservation.id }}</h2>
-                <a href="{{ path('reservation_edit', {'id': reservation.id}) }}">Modifier</a>
-                <a href="{{ path('reservation_delete', {'id': reservation.id}) }}">Supprimer</a>
-            </li>
-        </ul>
-    {% else %}
-        <p>Aucune réservation</p>
-    {% endfor %}
+    <div class="listing">
+        {% for reservation in reservations %}
+            <ul>
+                <li>
+                    <h2>Réservation n°{{ reservation.id }}</h2>
+                    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}">Modifier</a>
+                    <a href="{{ path('reservation_delete', {'id': reservation.id}) }}">Supprimer</a>
+                </li>
+            </ul>
+        {% else %}
+            <p>Aucune réservation</p>
+        {% endfor %}
+    </div>
 
 {% endblock %}
