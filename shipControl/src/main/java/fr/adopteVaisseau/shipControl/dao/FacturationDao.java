@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FacturationDao extends JpaRepository<Facturation,Long> {
+
 }
