@@ -21,6 +21,9 @@ public class WsClient {
     @Autowired
     private ClientService clientService;
 
+    //POUR VOIR UN COMPORTEMENT DE WEB SERVICE PLUS INTERESSANT ET
+    //COMPLET => VOIR WsEMPLOYE AVEC le front de lancé
+    //IL GERE: ENREGISTREMENT,UPDATE,DELETE
     @GetMapping("client")
     public List<Client> getClients() {
         return clientService.findAll();
@@ -34,8 +37,8 @@ public class WsClient {
                 client.getLastName(),client.getMail(),client.getAdress(),client.getTel(),client.isPermissionPilot()));
     }
 
-    @DeleteMapping("deleteClient")
-    public void deleteClient(@Valid @RequestBody Client client){clientService.delete(client);}
+    @DeleteMapping("deleteClient/{id}")
+    public void deleteClient(@PathVariable Long id){clientService.deleteById(id);}
 
     @PutMapping("update-client")
     public void updateClient(@Valid @RequestBody Client client){

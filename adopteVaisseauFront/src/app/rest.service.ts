@@ -54,6 +54,17 @@ export class RestService {
     return this.http.get(endpoint2 + 'employee').pipe(
       map(this.extractData));
   }
+
+  findEmploye(id): Observable<any> {
+    return this.http.get(endpoint + 'find-employee/'+id).pipe(
+      map(this.extractData));
+  }
+
+  deleteEmploye(id){
+    return this.http.delete(endpoint + 'delete-employee/'+id).pipe(
+      map(this.extractData));
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

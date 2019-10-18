@@ -49,7 +49,7 @@
     </div>
   </div>
 
-  <h2>{{url}}</h2>
+  <h2>Url : {{url}}</h2>
   <div class="row">
     <table>
       <thead>
@@ -57,6 +57,7 @@
         <th>Nom</th>
         <th>Prénom</th>
         <th>Mail</th>
+        <th></th>
       </tr>
       </thead>
       <tbody>
@@ -64,6 +65,8 @@
         <td>{{employe.lastName}}</td>
         <td>{{employe.firstName}}</td>
         <td>{{employe.mail}}</td>
+        <td><button class="btn btn-primary" (click)="findEmploye(employe.id)">Modifier</button></td>
+        <td><button class="btn btn-primary" (click)="deleteEmploye(employe.id)">Supprimer</button></td>
       </tr>
       </tbody>
     </table>

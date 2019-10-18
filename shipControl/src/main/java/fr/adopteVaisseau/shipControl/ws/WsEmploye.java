@@ -23,5 +23,10 @@ public class WsEmploye {
         return (List<EmployeeDto>) getRestTemplate().getForObject(urlEmployee.concat("employee"), Collection.class);
     }
 
+    @PostMapping("add-employee")
+    public void addEmployee(@RequestBody EmployeeDto employee){
+        getRestTemplate().postForEntity(urlEmployee.concat("add-employee"),employee,EmployeeDto.class);
+    }
+
 
 }
