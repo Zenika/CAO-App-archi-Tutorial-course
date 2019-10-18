@@ -13,7 +13,10 @@ class Voiture
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @OneToMany(targetEntity="Location", mappedBy="Voiture")
      */
+    private $Locations;
+
     private $id;
 
     /**
@@ -45,6 +48,18 @@ class Voiture
      * @ORM\Column(type="string", length=255)
      */
     private $Category;
+
+    public function getLocations()
+    {
+        return $this->Locations;
+    }
+
+    public function setLocations($Locations)
+    {
+        $this->Locations = $Locations;
+
+        return $this;
+    }
 
     public function getId(): ?int
     {

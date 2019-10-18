@@ -13,6 +13,10 @@ class Location
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @ManyToOne(targetEntity="Client", inversedBy="Location")
+     * @JoinColumn(name="id", referencedColumnName="id")
+     * @ManyToOne(targetEntity="Client", inversedBy="Voiture")
+     * @JoinColumn(name="id", referencedColumnName="id")
      */
     private $id;
 

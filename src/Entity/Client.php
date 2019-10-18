@@ -13,7 +13,10 @@ class Client
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @OneToMany(targetEntity="Location", mappedBy="Client")
      */
+    private $Locations;
+
     private $id;
 
     /**
@@ -55,6 +58,18 @@ class Client
      * @ORM\Column(type="string", length=255)
      */
     private $Phone;
+
+    public function getLocations()
+    {
+        return $this->Locations;
+    }
+
+    public function setLocations($Locations)
+    {
+        $this->Locations = $Locations;
+
+        return $this;
+    }
 
     public function getId(): ?int
     {
