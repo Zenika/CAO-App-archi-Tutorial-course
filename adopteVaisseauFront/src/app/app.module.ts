@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ClientComponent } from './client/client.component';
 import {CommonModule} from "@angular/common";
+import { EmployeeComponent } from './employee/employee.component';
 
 
 const appRoutes: Routes = [
@@ -14,6 +15,11 @@ const appRoutes: Routes = [
     path: 'client',
     component: ClientComponent,
     data: { title: 'Client' }
+  },
+  {
+    path: 'employe',
+    component: EmployeeComponent,
+    data: { title: 'Employe' }
   },
   { path: '',
     redirectTo: '/client',
@@ -23,7 +29,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ClientComponent
+    ClientComponent,
+    EmployeeComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

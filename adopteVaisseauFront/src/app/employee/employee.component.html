@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">AdopteVaisseau</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="client">Client <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="employe">Employe <span class="sr-only">(current)</span></a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <h2>Employe</h2>
+  <div class="row">
+
+    <div class="col-sm-6">
+      <label for="inputNom">Nom</label>
+      <input [(ngModel)]="employe.lastName" id="inputNom" class="form-control" placeholder="Nom">
+    </div>
+
+    <div class="col-sm-6">
+      <label for="inputPrenom">Prenom</label>
+      <input [(ngModel)]="employe.firstName" id="inputPrenom" class="form-control" placeholder="Prenom">
+    </div>
+
+    <div class="col-sm-6">
+      <label for="inputMail">Mail</label>
+      <input [(ngModel)]="employe.mail" id="inputMail" class="form-control" placeholder="Mail">
+    </div>
+
+    <div class="col-sm-6">
+      <label for="inputPwd">Mdp</label>
+      <input  type="password" [(ngModel)]="employe.password" id="inputPwd" class="form-control" placeholder="*********">
+    </div>
+
+    <div class="col-sm-12">
+      <button class=" col-sm-2 btn btn-primary" (click)="addEmploye()">Enregistrer</button>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <button class=" col-sm-2 btn btn-primary" (click)="getEmploye()">Api1</button>
+    </div>
+    <div class="col-sm-6">
+      <button class=" col-sm-2 btn btn-primary" (click)="getEmployeApi2()">Api2</button>
+    </div>
+  </div>
+
+  <h2>{{url}}</h2>
+  <div class="row">
+    <table>
+      <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Mail</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let employe of employes">
+        <td>{{employe.lastName}}</td>
+        <td>{{employe.firstName}}</td>
+        <td>{{employe.mail}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

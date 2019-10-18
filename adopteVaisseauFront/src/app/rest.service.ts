@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 
 const endpoint = 'http://localhost:8080/api/';
+const endpoint2 = 'http://localhost:8081/api/';
 const httpOptions = {
   headers: new HttpHeaders({
     'content-type':  'application/json',
@@ -31,11 +32,28 @@ export class RestService {
     );
   }
 
+  addEmploye(employe): Observable<any> {
+    console.log(employe);
+    return this.http.post<any>(endpoint + 'add-employee', employe, httpOptions).pipe(
+      tap((product) => console.log(`added employe`)),
+      catchError(this.handleError<any>('addEmploye'))
+    );
+  }
+
   getClients(): Observable<any> {
     return this.http.get(endpoint + 'client').pipe(
       map(this.extractData));
   }
 
+  getEmployes(): Observable<any> {
+    return this.http.get(endpoint + 'employee').pipe(
+      map(this.extractData));
+  }
+
+  getEmployesApi2(): Observable<any> {
+    return this.http.get(endpoint2 + 'employee').pipe(
+      map(this.extractData));
+  }
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
