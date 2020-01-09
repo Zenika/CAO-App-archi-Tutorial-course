@@ -21,7 +21,6 @@ On récupère l'élément, puis on le supprime
 En-têtes : Authorization, User-Agent, Accept, Cache-Control, Host, Accept-Encoding, Content-Length, Connection
 Code retour : 400
 
-
 * Comment gérer une erreur ?
   * Que doit renvoyer une requête d'accès à une ressource nécessitant une authentification quand on n'est pas authentifié ?
 	Code retour : 403
