@@ -1,12 +1,24 @@
 ﻿Quiz Web-service REST:
 * Quelles entêtes et codes de retour doit-on utiliser pour la récupération d'une liste de réservations?
+
 * Quelles entêtes et codes de retour doit-on utiliser pour la création d'une réservation ?
+
 * Quelles entêtes et codes de retour doit-on utiliser pour la modification d'une réservation ?
+
 * Comment doit-on traiter la suppression d'une ressource ? (2 appels successifs) ?
+
 * Quelles entêtes et codes de retour doit-on utiliser si un paramètre obligatoire est manquant ?
+
 * Comment gérer une erreur ?
-   * Que doit renvoyer une requête d'accès à une ressource nécessitant une authentification quand on n'est pas authentifié ?
-   * Que doit renvoyer une requête pour une ressource dont on n'a pas les droits d'accès ?
-   * Que doit-on renvoyer quand on fait une opération non autorisée sur une ressource ?
-   * Que doit renvoyer une recherche dont les paramètres ne correspondent à aucune ressource ?
+  * Que doit renvoyer une requête d'accès à une ressource nécessitant une authentification quand on n'est pas authentifié ?
+  
+  * Que doit renvoyer une requête pour une ressource dont on n'a pas les droits d'accès ?
+  
+  * Que doit-on renvoyer quand on fait une opération non autorisée sur une ressource ?
+  
+  * Que doit renvoyer une recherche dont les paramètres ne correspondent à aucune ressource ?
+
 * Quelles entêtes et codes de retour doit-on utiliser lors de la migration d'un Web Service ?
+
+
+Slides en ligne: https://formation-webservices-restful-dot-zen-formations.appspot.com/slides.html#/
