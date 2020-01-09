@@ -1,0 +1,10 @@
+1 ) Authorization, Content-Type, GET, code 200
+2) Authorization, Content-Type, POST, code 200
+3) Authorization, Content-Type, PUT, code 201
+4)
+5) Code 400
+6) a. Code 401
+   b. Code 403
+   c. Code 405
+   d. Code 404
+7) 301 Moved Permanently
