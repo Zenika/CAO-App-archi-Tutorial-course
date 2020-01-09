@@ -27,6 +27,6 @@ via des verb http DELETE, et no npas 2 appels sucessif, le deuxieme retournerait
   * Que doit renvoyer une recherche dont les paramètres ne correspondent à aucune ressource ?
   une réponse 404 (not found)
 * Quelles entêtes et codes de retour doit-on utiliser lors de la migration d'un Web Service ?
-
+une réponse 301 http
 
 Slides en ligne: https://formation-webservices-restful-dot-zen-formations.appspot.com/slides.html#/
