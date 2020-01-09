@@ -1,0 +1,46 @@
+﻿Quiz Web-service REST:
+* Quelles entêtes, verbe HTTP et codes de retour doit-on utiliser pour la récupération d'une liste de réservations?
+
+GET
+
+* Quelles entêtes, verbe HTTP et codes de retour doit-on utiliser pour la création d'une réservation ?
+
+POST
+
+* Quelles entêtes, verbe HTTP et codes de retour doit-on utiliser pour la modification d'une réservation ?
+
+PUT
+
+* Comment doit-on traiter la suppression d'une ressource ? (2 appels successifs) ?
+
+DELETE et GET pour vérifier que la donnée a été supprimée
+
+* Quelles entêtes et codes de retour doit-on utiliser si un paramètre obligatoire est manquant ?
+
+406
+
+* Comment gérer une erreur ?
+
+On renvoit le code de l'erreur à l'utilisateur.
+
+  * Que doit renvoyer une requête d'accès à une ressource nécessitant une authentification quand on n'est pas authentifié ?
+
+401
+  
+  * Que doit renvoyer une requête pour une ressource dont on n'a pas les droits d'accès ?
+
+403
+  
+  * Que doit-on renvoyer quand on fait une opération non autorisée sur une ressource ?
+
+405
+  
+  * Que doit renvoyer une recherche dont les paramètres ne correspondent à aucune ressource ?
+
+404
+
+* Quelles entêtes et codes de retour doit-on utiliser lors de la migration d'un Web Service ?
+
+
+
+Slides en ligne: https://formation-webservices-restful-dot-zen-formations.appspot.com/slides.html#/
