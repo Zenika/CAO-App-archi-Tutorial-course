@@ -14,7 +14,8 @@ Header : Authorization + accept
 * Comment doit-on traiter la suppression d'une ressource ? (2 appels successifs) ?
 via des verb http GET puis un DELETE avec l'ID
 
-* Quelles entêtes et codes de retour doit-on utiliser si un paramètre obligatoire est manquant ?
+* Quelles entêtes et codes de retour doit-on utiliser si un paramètre obligatoire est manquant ? 
+	400 parce que c'est une bad request, la requête n'est pas bonne.
 
 
 * Comment gérer une erreur ?
