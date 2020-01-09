@@ -12,7 +12,7 @@ Verbe : UPDATE Code : 200 / 202
 Header : Authorization + accept
 
 * Comment doit-on traiter la suppression d'une ressource ? (2 appels successifs) ?
-via des verb http DELETE, et no npas 2 appels sucessif, le deuxieme retournerait une 404
+via des verb http GET puis un DELETE avec l'ID
 
 * Quelles entêtes et codes de retour doit-on utiliser si un paramètre obligatoire est manquant ?
 
