@@ -1,6 +1,6 @@
 # Application Architecture Tutorial course
 
-This repository is setup to receive your code and schemas for the 4 days training on application architecture
+This repository is setup to receive your code, schemas and deliverables for the 7 days training on application architecture
 
 ## Tools you need
 
